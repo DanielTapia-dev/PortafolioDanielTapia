@@ -1,8 +1,10 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
 
+/* Fuentes */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Sansita+Swashed:wght@300&display=swap");
 body {
   background-color: black;
 }

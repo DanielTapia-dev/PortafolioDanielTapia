@@ -1,0 +1,3 @@
+.item-header {
+  @apply mr-5 transition duration-300 transform hover:scale-125 font-fuentePrincipal;
+}
