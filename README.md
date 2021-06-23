@@ -10,7 +10,7 @@ Soy un desarrollador web especializado en Javascript, tengo conocimiento solidos
 
 # A continuación puedes revisar las versiones de las tecnologías que fueron utilizadas para este proyecto
 
-Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 11.2.2.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 12.0.5.
 
 Angular versión 12
 
