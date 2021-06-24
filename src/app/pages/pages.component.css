@@ -1,4 +1,7 @@
 .imagen-fija {
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+
+.rotacion-estrella {
+  transform: rotate(-10deg);
 }
