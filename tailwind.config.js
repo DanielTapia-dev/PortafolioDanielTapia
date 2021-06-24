@@ -15,7 +15,10 @@ module.exports = {
     extend: {
       fontFamily: {
         'fuentePrincipal': ['Oswald', 'sans-serif']
-      }
+      },
+      backgroundImage: theme => ({
+        'luna': "url('https://res.cloudinary.com/latamarket/image/upload/v1624468505/luna_aghhs8.png')",
+      })
     },
   },
   variants: {
