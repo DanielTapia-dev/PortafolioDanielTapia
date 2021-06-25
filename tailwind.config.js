@@ -25,11 +25,12 @@ module.exports = {
         'nave-espacial': "url('https://res.cloudinary.com/latamarket/image/upload/v1624516120/NaveEspacial_trz1lx.png')",
       }),
       animation: {
-        'bg-luna': 'backLuna 40s linear infinite',
-        'bg-luna-md': 'backLunaMD 40s linear infinite',
+        'bg-luna': 'backLuna 50s linear infinite',
+        'bg-luna-md': 'backLunaMD 50s linear infinite',
         'bg-estrella-fugaz': 'backEstrellaFugaz 10s linear infinite',
         'bg-fondo-espacio': 'backEspacio 90s linear infinite',
-        'bg-nave-espacial': 'backNaveEspacial 70s linear infinite'
+        'bg-nave-espacial': 'backNaveEspacial 40s linear infinite',
+        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite'
       },
       keyframes: {
         backLuna: {
@@ -49,8 +50,12 @@ module.exports = {
           '100%': { 'background-position': '-1000px -800px' },
         },
         backNaveEspacial: {
-          '0%': { 'background-position': '1800px 1400px' },
-          '100%': { 'background-position': '-1000px -800px' },
+          '0%': { transform: "translate(4000px,2000px)" },
+          '100%': { transform: "translate(-200px,-100px)" },
+        },
+        backNaveEspacialXS: {
+          '0%': { transform: "translate(4000px,5000px)" },
+          '100%': { transform: "translate(-200%,-200%)" },
         }
       }
     },
