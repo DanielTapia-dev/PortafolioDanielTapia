@@ -5,3 +5,13 @@
 .rotacion-estrella {
   transform: rotate(-10deg);
 }
+
+.imagenLogo {
+  overflow: true;
+}
+
+.position-header {
+  position: absolute;
+  right: 0%;
+  top: 0%;
+}

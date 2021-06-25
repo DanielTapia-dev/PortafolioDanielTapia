@@ -1,4 +1,5 @@
 const { guessProductionMode } = require("@ngneat/tailwind");
+const { transform } = require("typescript");
 
 process.env.TAILWIND_MODE = guessProductionMode() ? 'build' : 'watch';
 
@@ -24,15 +25,20 @@ module.exports = {
         'nave-espacial': "url('https://res.cloudinary.com/latamarket/image/upload/v1624516120/NaveEspacial_trz1lx.png')",
       }),
       animation: {
-        'bg-luna': 'backLuna 30s linear infinite',
+        'bg-luna': 'backLuna 40s linear infinite',
+        'bg-luna-md': 'backLunaMD 40s linear infinite',
         'bg-estrella-fugaz': 'backEstrellaFugaz 10s linear infinite',
         'bg-fondo-espacio': 'backEspacio 90s linear infinite',
         'bg-nave-espacial': 'backNaveEspacial 70s linear infinite'
       },
       keyframes: {
         backLuna: {
-          '0%': { 'background-position': '1800px 1400px' },
-          '100%': { 'background-position': '-1000px -1100px' },
+          '0%': { transform: "translate(400%,250%)" },
+          '100%': { transform: "translate(-200%,-200%)" },
+        },
+        backLunaMD: {
+          '0%': { transform: "translate(400%,550%)" },
+          '100%': { transform: "translate(-200%,-200%)" },
         },
         backEstrellaFugaz: {
           '0%': { 'background-position': '3300px 1600px' },
@@ -50,6 +56,7 @@ module.exports = {
     },
   },
   variants: {
+    opcity: ['responsive', 'hover', 'focus', 'disabled'],
     extend: {},
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
