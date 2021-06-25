@@ -56,7 +56,8 @@ module.exports = {
         backNaveEspacialXS: {
           '0%': { transform: "translate(4000px,5000px)" },
           '100%': { transform: "translate(-200%,-200%)" },
-        }
+        },
+
       }
     },
   },

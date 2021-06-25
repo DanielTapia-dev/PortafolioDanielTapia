@@ -1,19 +1,21 @@
-<div class="bg-fondo-espacio animate-bg-fondo-espacio bg-contain">
-  <!-- <div class="invisible md:visible">
-        
-      </div> -->
+<div class="bg-fondo-espacio fondo animate-bg-fondo-espacio bg-contain">
   <div class="flex mx-3 text-gray-300 text-5xl justify-between font-semibold">
     <div>
       <img
-        class="pb-5 pt-2"
+        class="pb-5 pt-2 opacity-100 hover:opacity-0 absolute"
         src="../../assets/img/LogoPrincipal.png"
+        width="150px"
+      />
+      <img
+        class="pb-5 pt-2 opacity-0 hover:opacity-100 absolute"
+        src="../../assets/img/LogoPricipalColorfull.png"
         width="150px"
       />
     </div>
     <div class="pt-3 position-header invisible md:visible xl:visible">
       <app-header></app-header>
     </div>
-    <div class="visible md:invisible xl:invisible">&equiv;</div>
+    <div class="visible md:invisible xl:invisible animate-pulse">&equiv;</div>
   </div>
   <img
     class="
@@ -22,12 +24,12 @@
       md:animate-bg-luna-md
       lg:animate-bg-luna lg:w-1/3
     "
-    style="z-index: -2; position: absolute"
+    style="z-index: -2; position: relative"
     src="https://res.cloudinary.com/latamarket/image/upload/v1624468505/luna_aghhs8.png"
   />
   <img
     class="w-12 animate-bg-nave-espacial-xs md:animate-bg-nave-espacial"
-    style="z-index: -2; position: absolute"
+    style="z-index: -2; position: relative"
     src="https://res.cloudinary.com/latamarket/image/upload/v1624516120/NaveEspacial_trz1lx.png"
   />
   <br />
@@ -37,55 +39,18 @@
   <br />
   <br />
   <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
-  <br />
   <router-outlet></router-outlet>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+  <app-footer></app-footer>
+  <br />
+  <br />
 </div>
