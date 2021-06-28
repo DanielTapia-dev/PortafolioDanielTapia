@@ -1,3 +1,9 @@
 .item-header {
-  @apply mr-5 transition duration-300 transform hover:scale-125 font-fuentePrincipal;
+  @apply mr-5 transition duration-300 transform hover:scale-125 font-fuentePrincipal cursor-pointer;
+}
+
+.position-header {
+  position: absolute;
+  right: 0%;
+  top: 0%;
 }

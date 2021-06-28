@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  seccion: any;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  scrollToElement(element: any) {
+    this.seccion = document.getElementById(element);
+    this.seccion.scrollIntoView({ block: "end", behavior: "smooth" });
   }
 
 }

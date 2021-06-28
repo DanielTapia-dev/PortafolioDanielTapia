@@ -1,18 +1,35 @@
-<header id="header" class="font-sans text-white text-left text-2xl">
-  <nav class="flex-1">
-    <ul class="flex flex-row justify-end">
-      <li class="item-header">
-        <a href="#">INICIO</a>
-      </li>
-      <li class="item-header">
-        <a href="#">PROYECTOS</a>
-      </li>
-      <li class="item-header">
-        <a href="#">ESTUDIOS</a>
-      </li>
-      <li class="item-header">
-        <a href="#">CERTIFICACIONES</a>
-      </li>
-    </ul>
-  </nav>
+<header class="flex mx-3 text-gray-300 text-5xl justify-between font-semibold">
+  <div>
+    <img
+      class="pb-5 pt-2 opacity-100 hover:opacity-0 absolute"
+      src="../../assets/img/LogoPrincipal.png"
+      width="150px"
+    />
+    <img
+      class="pb-5 pt-2 opacity-0 hover:opacity-100 absolute"
+      src="../../assets/img/LogoPricipalColorfull.png"
+      width="150px"
+    />
+  </div>
+  <div class="pt-3 position-header invisible md:visible xl:visible">
+    <div id="header" class="font-sans text-white text-left text-2xl">
+      <nav class="flex-1">
+        <ul class="flex flex-row justify-end">
+          <li class="item-header">
+            <a href="#">INICIO</a>
+          </li>
+          <li class="item-header">
+            <a href="#">PROYECTOS</a>
+          </li>
+          <li class="item-header">
+            <a>ESTUDIOS</a>
+          </li>
+          <li class="item-header">
+            <a (click)="scrollToElement('PruebaScroll')">CERTIFICACIONES</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="visible md:invisible xl:invisible animate-pulse">&equiv;</div>
 </header>

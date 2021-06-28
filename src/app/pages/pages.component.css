@@ -10,12 +10,16 @@
   overflow: true;
 }
 
-.position-header {
-  position: absolute;
-  right: 0%;
-  top: 0%;
-}
-
 .fondo {
   overflow: hidden;
+}
+
+.title_welcome {
+  position: absolute;
+  top: 45%;
+  right: 30%;
+}
+
+.margen {
+  margin-top: 47%;
 }
