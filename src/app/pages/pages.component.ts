@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-pages',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  constructor() { }
+  start: boolean = true;
+  about: boolean = false;
+  projects: boolean = false;
+  contacto: boolean = false;
 
-  ngOnInit(): void {
+  constructor() {
   }
 
+  ngOnInit(): void {
+
+  }
+
+  @HostListener('mousewheel', ['$event']) onMousewheel(event: any) {
+    console.log(event.deltaY);
+  }
 }
