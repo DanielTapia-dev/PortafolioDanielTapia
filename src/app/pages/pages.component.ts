@@ -13,8 +13,4 @@ export class PagesComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-  @HostListener('mousewheel', ['$event']) onMousewheel(event: any) {
-    console.log(event.deltaY);
-  }
 }
