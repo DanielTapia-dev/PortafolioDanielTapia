@@ -2,13 +2,25 @@
   <ul class="flex flex-row">
     <div>
       <img
+        *ngIf="start == true"
         src="../../../assets/img/BotonDeUso.png"
+        class="w-6 mx-2"
+      />
+      <img
+        *ngIf="start == false"
+        src="../../../assets/img/BotonSinUso.png"
         class="w-6 mx-2"
         (click)="MoveScreen('start')"
       />
     </div>
     <div>
       <img
+        *ngIf="about == true"
+        src="../../../assets/img/BotonDeUso.png"
+        class="w-6 mx-2"
+      />
+      <img
+        *ngIf="about == false"
         src="../../../assets/img/BotonSinUso.png"
         class="w-6 mx-2"
         (click)="MoveScreen('about')"
@@ -17,6 +29,12 @@
 
     <div>
       <img
+        *ngIf="projects == true"
+        src="../../../assets/img/BotonDeUso.png"
+        class="w-6 mx-2"
+      />
+      <img
+        *ngIf="projects == false"
         src="../../../assets/img/BotonSinUso.png"
         class="w-6 mx-2"
         (click)="MoveScreen('projects')"
@@ -24,6 +42,12 @@
     </div>
     <div>
       <img
+        *ngIf="contact == true"
+        src="../../../assets/img/BotonDeUso.png"
+        class="w-6 mx-2"
+      />
+      <img
+        *ngIf="contact == false"
         src="../../../assets/img/BotonSinUso.png"
         class="w-6 mx-2"
         (click)="MoveScreen('contact')"
