@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,10 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  start: boolean = true;
-  about: boolean = false;
-  projects: boolean = false;
-  contact: boolean = false;
+  @Input() start: boolean = true;
+  @Input() about: boolean = false;
+  @Input() projects: boolean = false;
+  @Input() contact: boolean = false;
 
   seccion: any;
 
@@ -50,6 +50,10 @@ export class SidebarComponent implements OnInit {
     }
     this.seccion = document.getElementById(screen);
     this.seccion.scrollIntoView({ block: "end", behavior: "smooth" });
+  }
+
+  @HostListener('mousewheel', ['$event']) onMousewheel(event: any) {
+    console.log(event.deltaY);
   }
 
 }
