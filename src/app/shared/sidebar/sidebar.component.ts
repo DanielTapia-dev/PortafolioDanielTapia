@@ -7,13 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
+  seccion: any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   MoveScreen(screen: string) {
-    console.log(screen);
+    this.seccion = document.getElementById(screen);
+    this.seccion.scrollIntoView({ block: "end", behavior: "smooth" });
   }
 
 }
