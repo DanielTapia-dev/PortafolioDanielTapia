@@ -7,11 +7,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
-  start: boolean = true;
-  about: boolean = false;
-  projects: boolean = false;
-  contacto: boolean = false;
-
   constructor() {
   }
 
