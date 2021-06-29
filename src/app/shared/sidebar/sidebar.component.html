@@ -1,6 +1,6 @@
-<div class="flex justify-center md:my-auto md:justify-start">
+<div class="flex justify-center md:items-center md:inset-2 md:absolute">
   <ul class="flex flex-row md:flex-col">
-    <div>
+    <div class="my-2">
       <img
         *ngIf="start === 'true'"
         src="../../../assets/img/BotonDeUso.png"
@@ -13,7 +13,7 @@
         (click)="MoveScreen('start')"
       />
     </div>
-    <div>
+    <div class="my-2">
       <img
         *ngIf="about === 'true'"
         src="../../../assets/img/BotonDeUso.png"
@@ -27,7 +27,7 @@
       />
     </div>
 
-    <div>
+    <div class="my-2">
       <img
         *ngIf="projects === 'true'"
         src="../../../assets/img/BotonDeUso.png"
@@ -40,7 +40,7 @@
         (click)="MoveScreen('projects')"
       />
     </div>
-    <div>
+    <div class="my-2">
       <img
         *ngIf="contact === 'true'"
         src="../../../assets/img/BotonDeUso.png"
