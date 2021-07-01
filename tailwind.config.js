@@ -31,7 +31,10 @@ module.exports = {
         'bg-estrella-fugaz': 'backEstrellaFugaz 10s linear infinite',
         'bg-fondo-espacio': 'backEspacio 900s linear infinite',
         'bg-nave-espacial': 'backNaveEspacial 40s linear infinite',
-        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite'
+        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite',
+        'rigth-to-left': 'enterFromLeft 3s linear',
+        'left-to-right': 'enterFromRight 3s linear',
+
       },
       keyframes: {
         backLuna: {
@@ -57,6 +60,14 @@ module.exports = {
         backNaveEspacialXS: {
           '0%': { transform: "translate(4000px,5000px)" },
           '100%': { transform: "translate(-200%,-200%)" },
+        },
+        enterFromLeft: {
+          '0%': { transform: "translate(100%,0%)" },
+          '100%': { transform: "translate(0%,0%)" },
+        },
+        enterFromRight: {
+          '0%': { transform: "translate(-100%,0%)" },
+          '100%': { transform: "translate(0%,0%)" },
         },
 
       }
