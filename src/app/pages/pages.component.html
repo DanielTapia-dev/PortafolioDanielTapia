@@ -10,7 +10,7 @@
   <div><app-header></app-header></div>
   <div class="flex flex-col">
     <div class="h-screen md:h-screen z-0" id="start">
-      <app-presentation></app-presentation>
+      <app-presentation [activation]="activation"></app-presentation>
     </div>
     <div class="text-white font-sans text-9xl h-screen md:h-screen" id="about">
       About
@@ -40,4 +40,5 @@
       [page]="page"
     ></app-sidebar>
   </div>
+  <div></div>
 </div>

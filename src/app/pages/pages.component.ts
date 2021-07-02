@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
+  activation: boolean = true;
   start: any = 'true';
   about: any = 'false';
   projects: any = 'false';
@@ -16,6 +17,7 @@ export class PagesComponent implements OnInit {
   screenSize: number = 0;
   initialSize: number = window.innerHeight;
   event: string = '';
+  chargetime: boolean = true;
   constructor() {
   }
 
@@ -40,40 +42,48 @@ export class PagesComponent implements OnInit {
     }
   }
 
-  //Funcion para activar cambio de pantall al mover el scroll
+  //Funcion para activar cambio de pantalla al mover el scroll
   @HostListener('wheel', ['$event']) onMousewheel(event: any) {
-    if (this.page == 'start') {
-      if (event.deltaY > '0') {
-        this.page = 'about';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
+    if (this.chargetime === true) {
+      if (this.page == 'start') {
+        if (event.deltaY > '0') {
+          this.page = 'about';
+          this.activation = false;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+      } else if (this.page == 'about') {
+        if (event.deltaY > '0') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else {
+          this.page = 'start';
+          this.activation = true;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+      } else if (this.page == 'projects') {
+        if (event.deltaY > '0') {
+          this.page = 'contact';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else {
+          this.page = 'about';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+      } else if (this.page == 'contact') {
+        if (event.deltaY < '0') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
       }
-    } else if (this.page == 'about') {
-      if (event.deltaY > '0') {
-        this.page = 'projects';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      } else {
-        this.page = 'start';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      }
-    } else if (this.page == 'projects') {
-      if (event.deltaY > '0') {
-        this.page = 'contact';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      } else {
-        this.page = 'about';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      }
-    } else if (this.page == 'contact') {
-      if (event.deltaY < '0') {
-        this.page = 'projects';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      }
+      this.chargetime = false;
+      setTimeout(() => {
+        this.chargetime = true;
+      }, 1000);
     }
   }
 

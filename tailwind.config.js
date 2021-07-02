@@ -32,9 +32,10 @@ module.exports = {
         'bg-fondo-espacio': 'backEspacio 900s linear infinite',
         'bg-nave-espacial': 'backNaveEspacial 40s linear infinite',
         'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite',
-        'rigth-to-left': 'enterFromLeft 3s linear',
-        'left-to-right': 'enterFromRight 3s linear',
-
+        'rigth-to-left': 'enterFromLeft 0.5s linear',
+        'left-to-right': 'enterFromRight 0.5s linear',
+        'back-to-left': 'backToLeft 0.5s linear',
+        'back-to-right': 'backToRight 0.5s linear',
       },
       keyframes: {
         backLuna: {
@@ -69,13 +70,21 @@ module.exports = {
           '0%': { transform: "translate(-100%,0%)" },
           '100%': { transform: "translate(0%,0%)" },
         },
-
+        backToLeft: {
+          '0%': { transform: "translate(0%,0%)" },
+          '100%': { transform: "translate(-100%,0%)" },
+        },
+        backToRight: {
+          '0%': { transform: "translate(00%,0%)" },
+          '100%': { transform: "translate(100%,0%)" },
+        }
       }
     },
   },
   variants: {
     opcity: ['responsive', 'hover', 'focus', 'disabled'],
     extend: {},
+    transitionProperty: ['responsive', 'motion-safe', 'motion-reduce']
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
