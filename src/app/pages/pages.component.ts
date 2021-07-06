@@ -42,6 +42,59 @@ export class PagesComponent implements OnInit {
     }
   }
 
+  //Funcion para activar cambio de pantalla al presionar las teclas de arriba o abajo
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.code === 'ArrowUp') {
+      console.log('Flecha a arriba');
+      if (this.chargetime === true && this.page != 'start') {
+        if (this.page == 'about') {
+          this.page = 'start';
+          this.activation = true;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'projects') {
+
+          this.page = 'about';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'contact') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+        this.chargetime = false;
+        setTimeout(() => {
+          this.chargetime = true;
+        }, 1000);
+      }
+    }
+
+    if (event.code === 'ArrowDown') {
+      console.log('Flecha a abajo');
+      if (this.chargetime === true && this.page != 'contact') {
+        if (this.page == 'start') {
+          this.page = 'about';
+          this.activation = false;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'about') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'projects') {
+          this.page = 'contact';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+        this.chargetime = false;
+        setTimeout(() => {
+          this.chargetime = true;
+        }, 1000);
+      }
+    }
+  }
+
   //Funcion para activar cambio de pantalla al mover el scroll
   @HostListener('wheel', ['$event']) onMousewheel(event: any) {
     if (this.chargetime === true) {

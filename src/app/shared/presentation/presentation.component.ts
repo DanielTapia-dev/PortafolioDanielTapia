@@ -37,12 +37,6 @@ export class PresentationComponent implements OnInit {
         this.screenReadyToChange = true;
         this.validateToOnlyOneRepeat = true;
       }
-      /* if (y < section.getBoundingClientRect().height) {
-        document.getElementById("astro")?.classList.remove('animate-back-to-right');
-        document.getElementById("data")?.classList.remove('animate-back-to-left');
-        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
-        document.getElementById("data")?.classList.add('animate-left-to-right');
-      } */
     };
   }
 
