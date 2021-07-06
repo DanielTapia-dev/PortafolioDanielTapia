@@ -46,7 +46,6 @@ export class PagesComponent implements OnInit {
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.code === 'ArrowUp') {
-      console.log('Flecha a arriba');
       if (this.chargetime === true && this.page != 'start') {
         if (this.page == 'about') {
           this.page = 'start';
@@ -71,7 +70,6 @@ export class PagesComponent implements OnInit {
     }
 
     if (event.code === 'ArrowDown') {
-      console.log('Flecha a abajo');
       if (this.chargetime === true && this.page != 'contact') {
         if (this.page == 'start') {
           this.page = 'about';
