@@ -19,10 +19,10 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'luna': "url('https://res.cloudinary.com/latamarket/image/upload/v1624468505/luna_aghhs8.png')",
-        'tierra': "url(/assets/img/EartWallpaper.png)",
+        'tierra': "url(assets/img/EartWallpaper.png)",
         'estrellas': "url('https://res.cloudinary.com/latamarket/image/upload/v1624510634/stars_xrkrjt.png')",
         'estrellas-fugaz': "url('https://res.cloudinary.com/latamarket/image/upload/v1624513512/estrellafugaz1_p5efuk.png')",
-        'fondo-espacio': "url(/assets/img/FondoEspacial_remspv.png)",
+        'fondo-espacio': "url(assets/img/FondoEspacial_remspv.png)",
         'nave-espacial': "url('https://res.cloudinary.com/latamarket/image/upload/v1624516120/NaveEspacial_trz1lx.png')",
       }),
       animation: {
