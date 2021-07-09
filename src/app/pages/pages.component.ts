@@ -53,8 +53,8 @@ export class PagesComponent implements OnInit {
       let deltaTime = event.timeStamp - this.defaultTouch.time;
 
       // simulte a swipe -> less than 500 ms and more than 60 px
-      if (deltaTime < 500) {
-        if (Math.abs(deltaY) > 60) {
+      if (deltaTime < 300) {
+        if (Math.abs(deltaY) > 40) {
           // delta y is at least 60 pixels
           if (this.chargetime === true) {
             if (this.page == 'start') {
