@@ -34,6 +34,82 @@ export class PagesComponent implements OnInit {
     this.CheckControlPages();
   }
 
+  defaultTouch = { x: 0, y: 0, time: 0 };
+
+  @HostListener('touchstart', ['$event'])
+  @HostListener('touchend', ['$event'])
+  @HostListener('touchcancel', ['$event'])
+  handleTouch(event: any) {
+    let touch = event.touches[0] || event.changedTouches[0];
+
+    // check the events
+    if (event.type === 'touchstart') {
+      this.defaultTouch.x = touch.pageX;
+      this.defaultTouch.y = touch.pageY;
+      this.defaultTouch.time = event.timeStamp;
+    } else if (event.type === 'touchend') {
+      let deltaX = touch.pageX - this.defaultTouch.x;
+      let deltaY = touch.pageY - this.defaultTouch.y;
+      let deltaTime = event.timeStamp - this.defaultTouch.time;
+
+      // simulte a swipe -> less than 500 ms and more than 60 px
+      if (deltaTime < 500) {
+        if (Math.abs(deltaY) > 60) {
+          // delta y is at least 60 pixels
+          if (this.chargetime === true) {
+            if (this.page == 'start') {
+              if (deltaY < 0) {
+                this.page = 'about';
+                this.activation = false;
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            } else if (this.page == 'about') {
+              if (deltaY < 0) {
+                this.page = 'projects';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              } else {
+                this.page = 'start';
+                this.activation = true;
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            } else if (this.page == 'projects') {
+              if (deltaY < 0) {
+                this.page = 'contact';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              } else {
+                this.page = 'about';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            } else if (this.page == 'contact') {
+              if (deltaY > 0) {
+                this.page = 'projects';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            }
+            this.chargetime = false;
+            setTimeout(() => {
+              this.chargetime = true;
+            }, 1000);
+          }
+        }
+      }
+    }
+  }
+
+  doSwipeUp(event: any) {
+    console.log('swipe up', event);
+  }
+
+  doSwipeDown(event: any) {
+    console.log('swipe down', event);
+  }
+
   @HostListener('window:resize', ['$event']) onResize(event: any) {
     if (this.initialSize != event.target.innerHeight) {
       this.page = this.page;
@@ -42,15 +118,9 @@ export class PagesComponent implements OnInit {
     }
   }
 
-  @HostListener('document:touchmove', ['$event']) onTouchMove($event: TouchEvent): void {
-    console.log($event);
-  }
-
-  //Funcion para activar cambio de pantalla al presionar las teclas de arriba o abajo
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
     if (event.code === 'ArrowUp') {
-      console.log('Flecha a arriba');
       if (this.chargetime === true && this.page != 'start') {
         if (this.page == 'about') {
           this.page = 'start';
@@ -75,7 +145,6 @@ export class PagesComponent implements OnInit {
     }
 
     if (event.code === 'ArrowDown') {
-      console.log('Flecha a abajo');
       if (this.chargetime === true && this.page != 'contact') {
         if (this.page == 'start') {
           this.page = 'about';
