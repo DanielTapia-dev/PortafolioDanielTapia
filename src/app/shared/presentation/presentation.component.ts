@@ -17,16 +17,16 @@ export class PresentationComponent implements OnInit {
       var section: any = document.getElementById('start');
       var y = window.scrollY;
       if (y > 0 && this.screenReadyToChange === true && this.validateToOnlyOneRepeat === true) {
-        document.getElementById("astro")?.classList.add('animate-back-to-right');
+        /* document.getElementById("astro")?.classList.add('animate-back-to-right');
         document.getElementById("data")?.classList.add('animate-back-to-left');
         document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
-        document.getElementById("data")?.classList.remove('animate-left-to-right');
+        document.getElementById("data")?.classList.remove('animate-left-to-right'); */
         this.validateToOnlyOneRepeat = false;
       } else if (y < section.getBoundingClientRect().height && this.screenReadyToChange === false && this.validateToOnlyOneRepeat === true) {
-        document.getElementById("astro")?.classList.remove('animate-back-to-right');
+        /* document.getElementById("astro")?.classList.remove('animate-back-to-right');
         document.getElementById("data")?.classList.remove('animate-back-to-left');
         document.getElementById("astro")?.classList.add('animate-rigth-to-left');
-        document.getElementById("data")?.classList.add('animate-left-to-right');
+        document.getElementById("data")?.classList.add('animate-left-to-right'); */
         this.validateToOnlyOneRepeat = false;
       }
       if (y >= section.getBoundingClientRect().height) {
