@@ -42,6 +42,10 @@ export class PagesComponent implements OnInit {
     }
   }
 
+  @HostListener('document:touchmove', ['$event']) onTouchMove($event: TouchEvent): void {
+    console.log($event);
+  }
+
   //Funcion para activar cambio de pantalla al presionar las teclas de arriba o abajo
   @HostListener('window:keyup', ['$event'])
   keyEvent(event: KeyboardEvent) {
