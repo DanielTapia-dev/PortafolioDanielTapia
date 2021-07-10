@@ -18,7 +18,7 @@ module.exports = {
         'fuentePrincipal': ['Oswald', 'sans-serif']
       },
       backgroundImage: theme => ({
-        'luna': "url('https://res.cloudinary.com/latamarket/image/upload/v1624468505/luna_aghhs8.png')",
+        'luna': "url(/assets/img/AboutMe.png)",
         'tierra': "url(/assets/img/EartWallpaper.png)",
         'estrellas': "url('https://res.cloudinary.com/latamarket/image/upload/v1624510634/stars_xrkrjt.png')",
         'estrellas-fugaz': "url('https://res.cloudinary.com/latamarket/image/upload/v1624513512/estrellafugaz1_p5efuk.png')",
