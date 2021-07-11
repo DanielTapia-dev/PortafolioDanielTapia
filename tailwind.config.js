@@ -18,7 +18,7 @@ module.exports = {
         'fuentePrincipal': ['Oswald', 'sans-serif']
       },
       backgroundImage: theme => ({
-        'luna': "url(/assets/img/AboutMe.png)",
+        'luna': "url(/assets/img/BannerTech.png)",
         'tierra': "url(/assets/img/EartWallpaper.png)",
         'estrellas': "url('https://res.cloudinary.com/latamarket/image/upload/v1624510634/stars_xrkrjt.png')",
         'estrellas-fugaz': "url('https://res.cloudinary.com/latamarket/image/upload/v1624513512/estrellafugaz1_p5efuk.png')",
@@ -31,7 +31,8 @@ module.exports = {
         'bg-estrella-fugaz': 'backEstrellaFugaz 10s linear infinite',
         'bg-fondo-espacio': 'backEspacio 900s linear infinite',
         'bg-nave-espacial': 'backNaveEspacial 40s linear infinite',
-        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite'
+        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite',
+        'card': 'enterCard 1s ',
       },
       keyframes: {
         backLuna: {
@@ -58,7 +59,10 @@ module.exports = {
           '0%': { transform: "translate(4000px,5000px)" },
           '100%': { transform: "translate(-200%,-200%)" },
         },
-
+        enterCard: {
+          '0%': { transform: "scale(0.5)" },
+          '100%': { transform: "scale(1)" },
+        },
       }
     },
   },
