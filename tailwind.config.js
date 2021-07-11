@@ -35,6 +35,8 @@ module.exports = {
         'card': 'enterCard 1s ',
         'rigth-to-left': 'enterFromLeft 0.5s linear',
         'left-to-right': 'enterFromRight 0.5s linear',
+        'left-to-right_1s': 'enterFromRight 0.3s linear',
+        'left-to-right_1.5s': 'enterFromRight 0.8s linear',
         'back-to-left': 'backToLeft 0.5s linear',
         'back-to-right': 'backToRight 0.5s linear',
       },
