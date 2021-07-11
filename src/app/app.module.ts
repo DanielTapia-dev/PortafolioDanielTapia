@@ -8,6 +8,8 @@ import { PagesComponent } from './pages/pages.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
 import { ProyectoPrincipalComponent } from './shared/proyecto-principal/proyecto-principal.component';
+import { AboutMeComponent } from './shared/about-me/about-me.component';
+import { PresentationComponent } from './shared/presentation/presentation.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ProyectoPrincipalComponent } from './shared/proyecto-principal/proyecto
     PagesComponent,
     FooterComponent,
     SidebarComponent,
-    ProyectoPrincipalComponent
+    ProyectoPrincipalComponent,
+    AboutMeComponent,
+    PresentationComponent
   ],
   imports: [
     BrowserModule,

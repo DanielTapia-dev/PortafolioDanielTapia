@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class PagesComponent implements OnInit {
 
+  activation: boolean = true;
   start: any = 'true';
   about: any = 'false';
   projects: any = 'false';
@@ -16,7 +17,67 @@ export class PagesComponent implements OnInit {
   screenSize: number = 0;
   initialSize: number = window.innerHeight;
   event: string = '';
+  chargetime: boolean = true;
+  pageSize: any;
+  pageState: boolean = true;
+  pageOnlyOneRepeat: boolean = true;
   constructor() {
+    window.onscroll = () => {
+      this.pageSize = document.getElementById('start')?.getBoundingClientRect().height;
+      var y = window.scrollY;
+      //console.log(y);
+      //console.log(this.page);
+      switch (this.page) {
+        case 'start':
+          this.EnterPresentation();
+          this.ExitAbout();
+          break;
+        case 'about':
+          this.ExitPresentation();
+          this.EnterAbout();
+          break;
+        case 'projects':
+          this.ExitAbout();
+          break;
+        case 'contact':
+          this.ExitAbout();
+          break;
+        default:
+          break;
+      }
+      /* if (this.page == 'start') {
+        console.log('Holi');
+        document.getElementById("astro")?.classList.remove('animate-back-to-right');
+        document.getElementById("data")?.classList.remove('animate-back-to-left');
+        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
+        document.getElementById("data")?.classList.add('animate-left-to-right');
+      } else if (this.page == 'about') {
+        document.getElementById("astro")?.classList.add('animate-back-to-right');
+        document.getElementById("data")?.classList.add('animate-back-to-left');
+        document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
+        document.getElementById("data")?.classList.remove('animate-left-to-right');
+      } */
+
+      /* if (y > 0 && this.pageState === false && this.pageOnlyOneRepeat === false) {
+        console.log("EWntro papu");
+        document.getElementById("astro")?.classList.add('animate-back-to-right');
+        document.getElementById("data")?.classList.add('animate-back-to-left');
+        document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
+        document.getElementById("data")?.classList.remove('animate-left-to-right');
+        this.pageState = true;
+      }
+      if (y < this.pageSize && this.pageState === true && this.pageOnlyOneRepeat === true) {
+        document.getElementById("astro")?.classList.remove('animate-back-to-right');
+        document.getElementById("data")?.classList.remove('animate-back-to-left');
+        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
+        document.getElementById("data")?.classList.add('animate-left-to-right');
+        this.pageState = false;
+        this.pageOnlyOneRepeat = false;
+      }
+      if (this.pageSize == 0) {
+        this.pageOnlyOneRepeat = true;
+      } */
+    };
   }
 
   ngOnInit(): void {
@@ -32,6 +93,82 @@ export class PagesComponent implements OnInit {
     this.CheckControlPages();
   }
 
+  defaultTouch = { x: 0, y: 0, time: 0 };
+
+  @HostListener('touchstart', ['$event'])
+  @HostListener('touchend', ['$event'])
+  @HostListener('touchcancel', ['$event'])
+  handleTouch(event: any) {
+    let touch = event.touches[0] || event.changedTouches[0];
+
+    // check the events
+    if (event.type === 'touchstart') {
+      this.defaultTouch.x = touch.pageX;
+      this.defaultTouch.y = touch.pageY;
+      this.defaultTouch.time = event.timeStamp;
+    } else if (event.type === 'touchend') {
+      let deltaX = touch.pageX - this.defaultTouch.x;
+      let deltaY = touch.pageY - this.defaultTouch.y;
+      let deltaTime = event.timeStamp - this.defaultTouch.time;
+
+      // simulte a swipe -> less than 500 ms and more than 60 px
+      if (deltaTime < 500) {
+        if (Math.abs(deltaY) > 40) {
+          // delta y is at least 60 pixels
+          if (this.chargetime === true) {
+            if (this.page == 'start') {
+              if (deltaY < 0) {
+                this.page = 'about';
+                this.activation = false;
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            } else if (this.page == 'about') {
+              if (deltaY < 0) {
+                this.page = 'projects';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              } else {
+                this.page = 'start';
+                this.activation = true;
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            } else if (this.page == 'projects') {
+              if (deltaY < 0) {
+                this.page = 'contact';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              } else {
+                this.page = 'about';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            } else if (this.page == 'contact') {
+              if (deltaY > 0) {
+                this.page = 'projects';
+                this.MoveScreen(this.page);
+                this.CheckControlPages();
+              }
+            }
+            this.chargetime = false;
+            setTimeout(() => {
+              this.chargetime = true;
+            }, 1000);
+          }
+        }
+      }
+    }
+  }
+
+  doSwipeUp(event: any) {
+    console.log('swipe up', event);
+  }
+
+  doSwipeDown(event: any) {
+    console.log('swipe down', event);
+  }
+
   @HostListener('window:resize', ['$event']) onResize(event: any) {
     if (this.initialSize != event.target.innerHeight) {
       this.page = this.page;
@@ -40,40 +177,98 @@ export class PagesComponent implements OnInit {
     }
   }
 
-  //Funcion para activar cambio de pantall al mover el scroll
+  @HostListener('window:keyup', ['$event'])
+  keyEvent(event: KeyboardEvent) {
+    if (event.code === 'ArrowUp') {
+      if (this.chargetime === true && this.page != 'start') {
+        if (this.page == 'about') {
+          this.page = 'start';
+          this.activation = true;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'projects') {
+
+          this.page = 'about';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'contact') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+        this.chargetime = false;
+        setTimeout(() => {
+          this.chargetime = true;
+        }, 1000);
+      }
+    }
+
+    if (event.code === 'ArrowDown') {
+      if (this.chargetime === true && this.page != 'contact') {
+        if (this.page == 'start') {
+          this.page = 'about';
+          this.activation = false;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'about') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else if (this.page == 'projects') {
+          this.page = 'contact';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+        this.chargetime = false;
+        setTimeout(() => {
+          this.chargetime = true;
+        }, 1000);
+      }
+    }
+  }
+
+  //Funcion para activar cambio de pantalla al mover el scroll
   @HostListener('wheel', ['$event']) onMousewheel(event: any) {
-    if (this.page == 'start') {
-      if (event.deltaY > '0') {
-        this.page = 'about';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
+    if (this.chargetime === true) {
+      if (this.page == 'start') {
+        if (event.deltaY > '0') {
+          this.page = 'about';
+          this.activation = false;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+      } else if (this.page == 'about') {
+        if (event.deltaY > '0') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else {
+          this.page = 'start';
+          this.activation = true;
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+      } else if (this.page == 'projects') {
+        if (event.deltaY > '0') {
+          this.page = 'contact';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        } else {
+          this.page = 'about';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
+      } else if (this.page == 'contact') {
+        if (event.deltaY < '0') {
+          this.page = 'projects';
+          this.MoveScreen(this.page);
+          this.CheckControlPages();
+        }
       }
-    } else if (this.page == 'about') {
-      if (event.deltaY > '0') {
-        this.page = 'projects';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      } else {
-        this.page = 'start';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      }
-    } else if (this.page == 'projects') {
-      if (event.deltaY > '0') {
-        this.page = 'contact';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      } else {
-        this.page = 'about';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      }
-    } else if (this.page == 'contact') {
-      if (event.deltaY < '0') {
-        this.page = 'projects';
-        this.MoveScreen(this.page);
-        this.CheckControlPages();
-      }
+      this.chargetime = false;
+      setTimeout(() => {
+        this.chargetime = true;
+      }, 1000);
     }
   }
 
@@ -136,4 +331,52 @@ export class PagesComponent implements OnInit {
     }
     window.scrollTo({ left: 0, top: this.screenSize });
   }
+
+  EnterPresentation() {
+    document.getElementById("astro")?.classList.remove('animate-back-to-right');
+    document.getElementById("data")?.classList.remove('animate-back-to-left');
+    document.getElementById("astro")?.classList.add('animate-rigth-to-left');
+    document.getElementById("data")?.classList.add('animate-left-to-right');
+  }
+
+  EnterAbout() {
+    document.getElementById("card")?.classList.add('animate-enter-card');
+    document.getElementById("card")?.classList.remove('animate-exit-card');
+    document.getElementById("about-title")?.classList.add('animate-left-to-right');
+    document.getElementById("about-title")?.classList.remove('animate-back-to-left');
+    document.getElementById("first-line-about")?.classList.add('animate-enter-card');
+    document.getElementById("first-line-about")?.classList.remove('animate-exit-card');
+    document.getElementById("second-line-about")?.classList.add('animate-enter-card');
+    document.getElementById("second-line-about")?.classList.remove('animate-exit-card');
+    document.getElementById("subtitle-about")?.classList.add('animate-left-to-right');
+    document.getElementById("subtitle-about")?.classList.remove('animate-back-to-left');
+  }
+
+  EnterProjects() { }
+
+  EnterContact() { }
+
+  ExitPresentation() {
+    document.getElementById("astro")?.classList.add('animate-back-to-right');
+    document.getElementById("data")?.classList.add('animate-back-to-left');
+    document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
+    document.getElementById("data")?.classList.remove('animate-left-to-right');
+  }
+
+  ExitAbout() {
+    document.getElementById("card")?.classList.remove('animate-enter-card');
+    document.getElementById("card")?.classList.add('animate-exit-card');
+    document.getElementById("about-title")?.classList.remove('animate-left-to-right');
+    document.getElementById("about-title")?.classList.add('animate-back-to-left');
+    document.getElementById("first-line-about")?.classList.remove('animate-enter-card');
+    document.getElementById("first-line-about")?.classList.add('animate-exit-card');
+    document.getElementById("second-line-about")?.classList.remove('animate-enter-card');
+    document.getElementById("second-line-about")?.classList.add('animate-exit-card');
+    document.getElementById("subtitle-about")?.classList.remove('animate-left-to-right');
+    document.getElementById("subtitle-about")?.classList.add('animate-back-to-left');
+  }
+
+  ExitProjects() { }
+
+  ExitContact() { }
 }
