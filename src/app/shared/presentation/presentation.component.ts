@@ -13,7 +13,7 @@ export class PresentationComponent implements OnInit {
   validateToOnlyOneRepeat: boolean = true;
 
   constructor() {
-    window.onscroll = () => {
+    /* window.onscroll = () => {
       var section: any = document.getElementById('start');
       var y = window.scrollY;
       if (y > 0 && this.screenReadyToChange === true && this.validateToOnlyOneRepeat === true) {
@@ -37,16 +37,16 @@ export class PresentationComponent implements OnInit {
         this.screenReadyToChange = true;
         this.validateToOnlyOneRepeat = true;
       }
-    };
+    }; */
   }
 
 
 
   ngOnInit(): void {
   }
-  mostrarAnimaciones() {
+  /* mostrarAnimaciones() {
     return document.getElementById("astro")?.classList.add('animate-back-to-right');;
-  }
+  } */
 
 }
 

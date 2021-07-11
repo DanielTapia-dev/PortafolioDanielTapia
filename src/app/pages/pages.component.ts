@@ -18,7 +18,66 @@ export class PagesComponent implements OnInit {
   initialSize: number = window.innerHeight;
   event: string = '';
   chargetime: boolean = true;
+  pageSize: any;
+  pageState: boolean = true;
+  pageOnlyOneRepeat: boolean = true;
   constructor() {
+    window.onscroll = () => {
+      this.pageSize = document.getElementById('start')?.getBoundingClientRect().height;
+      var y = window.scrollY;
+      //console.log(y);
+      //console.log(this.page);
+      switch (this.page) {
+        case 'start':
+          this.EnterPresentation();
+          this.ExitAbout();
+          break;
+        case 'about':
+          this.ExitPresentation();
+          this.EnterAbout();
+          break;
+        case 'projects':
+          this.ExitAbout();
+          break;
+        case 'contact':
+          this.ExitAbout();
+          break;
+        default:
+          break;
+      }
+      /* if (this.page == 'start') {
+        console.log('Holi');
+        document.getElementById("astro")?.classList.remove('animate-back-to-right');
+        document.getElementById("data")?.classList.remove('animate-back-to-left');
+        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
+        document.getElementById("data")?.classList.add('animate-left-to-right');
+      } else if (this.page == 'about') {
+        document.getElementById("astro")?.classList.add('animate-back-to-right');
+        document.getElementById("data")?.classList.add('animate-back-to-left');
+        document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
+        document.getElementById("data")?.classList.remove('animate-left-to-right');
+      } */
+
+      /* if (y > 0 && this.pageState === false && this.pageOnlyOneRepeat === false) {
+        console.log("EWntro papu");
+        document.getElementById("astro")?.classList.add('animate-back-to-right');
+        document.getElementById("data")?.classList.add('animate-back-to-left');
+        document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
+        document.getElementById("data")?.classList.remove('animate-left-to-right');
+        this.pageState = true;
+      }
+      if (y < this.pageSize && this.pageState === true && this.pageOnlyOneRepeat === true) {
+        document.getElementById("astro")?.classList.remove('animate-back-to-right');
+        document.getElementById("data")?.classList.remove('animate-back-to-left');
+        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
+        document.getElementById("data")?.classList.add('animate-left-to-right');
+        this.pageState = false;
+        this.pageOnlyOneRepeat = false;
+      }
+      if (this.pageSize == 0) {
+        this.pageOnlyOneRepeat = true;
+      } */
+    };
   }
 
   ngOnInit(): void {
@@ -272,4 +331,52 @@ export class PagesComponent implements OnInit {
     }
     window.scrollTo({ left: 0, top: this.screenSize });
   }
+
+  EnterPresentation() {
+    document.getElementById("astro")?.classList.remove('animate-back-to-right');
+    document.getElementById("data")?.classList.remove('animate-back-to-left');
+    document.getElementById("astro")?.classList.add('animate-rigth-to-left');
+    document.getElementById("data")?.classList.add('animate-left-to-right');
+  }
+
+  EnterAbout() {
+    document.getElementById("card")?.classList.add('animate-enter-card');
+    document.getElementById("card")?.classList.remove('animate-exit-card');
+    document.getElementById("about-title")?.classList.add('animate-left-to-right');
+    document.getElementById("about-title")?.classList.remove('animate-back-to-left');
+    document.getElementById("first-line-about")?.classList.add('animate-enter-card');
+    document.getElementById("first-line-about")?.classList.remove('animate-exit-card');
+    document.getElementById("second-line-about")?.classList.add('animate-enter-card');
+    document.getElementById("second-line-about")?.classList.remove('animate-exit-card');
+    document.getElementById("subtitle-about")?.classList.add('animate-left-to-right');
+    document.getElementById("subtitle-about")?.classList.remove('animate-back-to-left');
+  }
+
+  EnterProjects() { }
+
+  EnterContact() { }
+
+  ExitPresentation() {
+    document.getElementById("astro")?.classList.add('animate-back-to-right');
+    document.getElementById("data")?.classList.add('animate-back-to-left');
+    document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
+    document.getElementById("data")?.classList.remove('animate-left-to-right');
+  }
+
+  ExitAbout() {
+    document.getElementById("card")?.classList.remove('animate-enter-card');
+    document.getElementById("card")?.classList.add('animate-exit-card');
+    document.getElementById("about-title")?.classList.remove('animate-left-to-right');
+    document.getElementById("about-title")?.classList.add('animate-back-to-left');
+    document.getElementById("first-line-about")?.classList.remove('animate-enter-card');
+    document.getElementById("first-line-about")?.classList.add('animate-exit-card');
+    document.getElementById("second-line-about")?.classList.remove('animate-enter-card');
+    document.getElementById("second-line-about")?.classList.add('animate-exit-card');
+    document.getElementById("subtitle-about")?.classList.remove('animate-left-to-right');
+    document.getElementById("subtitle-about")?.classList.add('animate-back-to-left');
+  }
+
+  ExitProjects() { }
+
+  ExitContact() { }
 }
