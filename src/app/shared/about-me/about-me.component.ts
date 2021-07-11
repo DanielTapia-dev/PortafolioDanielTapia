@@ -7,15 +7,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class AboutMeComponent implements OnInit {
 
-  screenReadyToChange: boolean = true;
-  validateToOnlyOneRepeat: boolean = true;
-  seccion: any;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.seccion = document.getElementById('about');
-
 
   }
 

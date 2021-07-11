@@ -19,6 +19,10 @@ module.exports = {
       },
       backgroundImage: theme => ({
         'luna': "url(/assets/img/BannerTech.png)",
+        'banner-tech': "url(/assets/img/BannerTech.png)",
+        'banner-proyecto': "url(/assets/img/BannerProyecto.png)",
+        'banner-proyecto-login': "url(/assets/img/BannerLogin.png)",
+        'banner-proyecto-principal': "url(/assets/img/BannerPrincipal.png)",
         'tierra': "url(/assets/img/EartWallpaper.png)",
         'estrellas': "url('https://res.cloudinary.com/latamarket/image/upload/v1624510634/stars_xrkrjt.png')",
         'estrellas-fugaz': "url('https://res.cloudinary.com/latamarket/image/upload/v1624513512/estrellafugaz1_p5efuk.png')",

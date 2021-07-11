@@ -25,58 +25,34 @@ export class PagesComponent implements OnInit {
     window.onscroll = () => {
       this.pageSize = document.getElementById('start')?.getBoundingClientRect().height;
       var y = window.scrollY;
-      //console.log(y);
-      //console.log(this.page);
       switch (this.page) {
         case 'start':
           this.EnterPresentation();
           this.ExitAbout();
+          this.ExitProjects();
+          this.ExitContact();
           break;
         case 'about':
           this.ExitPresentation();
           this.EnterAbout();
+          this.ExitProjects();
+          this.ExitContact();
           break;
         case 'projects':
           this.ExitAbout();
+          this.ExitPresentation();
+          this.EnterProjects();
+          this.ExitContact();
           break;
         case 'contact':
+          this.ExitPresentation();
           this.ExitAbout();
+          this.ExitProjects();
+          this.EnterContact();
           break;
         default:
           break;
       }
-      /* if (this.page == 'start') {
-        console.log('Holi');
-        document.getElementById("astro")?.classList.remove('animate-back-to-right');
-        document.getElementById("data")?.classList.remove('animate-back-to-left');
-        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
-        document.getElementById("data")?.classList.add('animate-left-to-right');
-      } else if (this.page == 'about') {
-        document.getElementById("astro")?.classList.add('animate-back-to-right');
-        document.getElementById("data")?.classList.add('animate-back-to-left');
-        document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
-        document.getElementById("data")?.classList.remove('animate-left-to-right');
-      } */
-
-      /* if (y > 0 && this.pageState === false && this.pageOnlyOneRepeat === false) {
-        console.log("EWntro papu");
-        document.getElementById("astro")?.classList.add('animate-back-to-right');
-        document.getElementById("data")?.classList.add('animate-back-to-left');
-        document.getElementById("astro")?.classList.remove('animate-rigth-to-left');
-        document.getElementById("data")?.classList.remove('animate-left-to-right');
-        this.pageState = true;
-      }
-      if (y < this.pageSize && this.pageState === true && this.pageOnlyOneRepeat === true) {
-        document.getElementById("astro")?.classList.remove('animate-back-to-right');
-        document.getElementById("data")?.classList.remove('animate-back-to-left');
-        document.getElementById("astro")?.classList.add('animate-rigth-to-left');
-        document.getElementById("data")?.classList.add('animate-left-to-right');
-        this.pageState = false;
-        this.pageOnlyOneRepeat = false;
-      }
-      if (this.pageSize == 0) {
-        this.pageOnlyOneRepeat = true;
-      } */
     };
   }
 
@@ -352,7 +328,18 @@ export class PagesComponent implements OnInit {
     document.getElementById("subtitle-about")?.classList.remove('animate-back-to-left');
   }
 
-  EnterProjects() { }
+  EnterProjects() {
+    document.getElementById("card-project")?.classList.add('animate-enter-card');
+    document.getElementById("card-project")?.classList.remove('animate-exit-card');
+    document.getElementById("about-title-project")?.classList.add('animate-left-to-right');
+    document.getElementById("about-title-project")?.classList.remove('animate-back-to-left');
+    document.getElementById("first-line-about-project")?.classList.add('animate-enter-card');
+    document.getElementById("first-line-about-project")?.classList.remove('animate-exit-card');
+    document.getElementById("second-line-about-project")?.classList.add('animate-enter-card');
+    document.getElementById("second-line-about-project")?.classList.remove('animate-exit-card');
+    document.getElementById("subtitle-about-project")?.classList.add('animate-left-to-right');
+    document.getElementById("subtitle-about-project")?.classList.remove('animate-back-to-left');
+  }
 
   EnterContact() { }
 
@@ -376,7 +363,18 @@ export class PagesComponent implements OnInit {
     document.getElementById("subtitle-about")?.classList.add('animate-back-to-left');
   }
 
-  ExitProjects() { }
+  ExitProjects() {
+    document.getElementById("card-project")?.classList.remove('animate-enter-card');
+    document.getElementById("card-project")?.classList.add('animate-exit-card');
+    document.getElementById("about-title-project")?.classList.remove('animate-left-to-right');
+    document.getElementById("about-title-project")?.classList.add('animate-back-to-left');
+    document.getElementById("first-line-about-project")?.classList.remove('animate-enter-card');
+    document.getElementById("first-line-about-project")?.classList.add('animate-exit-card');
+    document.getElementById("second-line-about-project")?.classList.remove('animate-enter-card');
+    document.getElementById("second-line-about-project")?.classList.add('animate-exit-card');
+    document.getElementById("subtitle-about-project")?.classList.remove('animate-left-to-right');
+    document.getElementById("subtitle-about-project")?.classList.add('animate-back-to-left');
+  }
 
   ExitContact() { }
 }
