@@ -7,7 +7,11 @@ import { HeaderComponent } from './shared/header/header.component';
 import { PagesComponent } from './pages/pages.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { SidebarComponent } from './shared/sidebar/sidebar.component';
+<<<<<<< HEAD
 import { AboutMeComponent } from './shared/about-me/about-me.component';
+=======
+import { PresentationComponent } from './shared/presentation/presentation.component';
+>>>>>>> presentation
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { AboutMeComponent } from './shared/about-me/about-me.component';
     PagesComponent,
     FooterComponent,
     SidebarComponent,
+<<<<<<< HEAD
     AboutMeComponent
+=======
+    PresentationComponent
+>>>>>>> presentation
   ],
   imports: [
     BrowserModule,

@@ -22,7 +22,7 @@ module.exports = {
         'tierra': "url(/assets/img/EartWallpaper.png)",
         'estrellas': "url('https://res.cloudinary.com/latamarket/image/upload/v1624510634/stars_xrkrjt.png')",
         'estrellas-fugaz': "url('https://res.cloudinary.com/latamarket/image/upload/v1624513512/estrellafugaz1_p5efuk.png')",
-        'fondo-espacio': "url(/assets/img/FondoEspacial_remspv.png)",
+        'fondo-espacio': "url(assets/img/FondoEspacial_remspv.png)",
         'nave-espacial': "url('https://res.cloudinary.com/latamarket/image/upload/v1624516120/NaveEspacial_trz1lx.png')",
       }),
       animation: {
@@ -33,6 +33,10 @@ module.exports = {
         'bg-nave-espacial': 'backNaveEspacial 40s linear infinite',
         'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite',
         'card': 'enterCard 1s ',
+        'rigth-to-left': 'enterFromLeft 0.5s linear',
+        'left-to-right': 'enterFromRight 0.5s linear',
+        'back-to-left': 'backToLeft 0.5s linear',
+        'back-to-right': 'backToRight 0.5s linear',
       },
       keyframes: {
         backLuna: {
@@ -63,12 +67,29 @@ module.exports = {
           '0%': { transform: "scale(0.5)" },
           '100%': { transform: "scale(1)" },
         },
+        enterFromLeft: {
+          '0%': { transform: "translate(100%,0%)" },
+          '100%': { transform: "translate(0%,0%)" },
+        },
+        enterFromRight: {
+          '0%': { transform: "translate(-100%,0%)" },
+          '100%': { transform: "translate(0%,0%)" },
+        },
+        backToLeft: {
+          '0%': { transform: "translate(0%,0%)" },
+          '100%': { transform: "translate(-100%,0%)" },
+        },
+        backToRight: {
+          '0%': { transform: "translate(00%,0%)" },
+          '100%': { transform: "translate(100%,0%)" },
+        }
       }
     },
   },
   variants: {
     opcity: ['responsive', 'hover', 'focus', 'disabled'],
     extend: {},
+    transitionProperty: ['responsive', 'motion-safe', 'motion-reduce']
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };
