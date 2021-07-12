@@ -27,34 +27,10 @@
       "
       *ngIf="imageBanner == true"
     >
-      <button
-        class="
-          absolute
-          right-0
-          text-lg
-          mr-2
-          button-color
-          p-2
-          rounded-full
-          opacity-70
-        "
-        (click)="SiguienteImagen()"
-      >
+      <button class="slider-button-right symbol" (click)="SiguienteImagen()">
         >
       </button>
-      <button
-        class="
-          absolute
-          left-0
-          text-lg
-          ml-2
-          button-color
-          p-2
-          rounded-full
-          opacity-70
-        "
-        (click)="AnteriorImagen()"
-      >
+      <button class="slider-button-left symbol" (click)="AnteriorImagen()">
         <
       </button>
     </div>
@@ -75,36 +51,13 @@
       "
       *ngIf="imageLogin == true"
     >
-      <button
-        class="
-          absolute
-          right-0
-          text-lg
-          mr-2
-          button-color
-          p-2
-          rounded-full
-          opacity-70
-        "
-        (click)="SiguienteImagen()"
-      >
+      <button class="slider-button-right symbol" (click)="SiguienteImagen()">
         >
       </button>
-      <button
-        class="
-          absolute
-          left-0
-          text-lg
-          ml-2
-          button-color
-          p-2
-          rounded-full
-          opacity-70
-        "
-        (click)="AnteriorImagen()"
-      >
+      <button class="slider-button-left symbol" (click)="AnteriorImagen()">
         <
       </button>
+      <button class="slider-button" routerLink="">Ver mas</button>
     </div>
     <div
       id="card-project"
@@ -123,36 +76,13 @@
       "
       *ngIf="imagePrincipal == true"
     >
-      <button
-        class="
-          absolute
-          right-0
-          text-lg
-          mr-2
-          button-color
-          p-2
-          rounded-full
-          opacity-70
-        "
-        (click)="SiguienteImagen()"
-      >
+      <button class="slider-button-right symbol" (click)="SiguienteImagen()">
         >
       </button>
-      <button
-        class="
-          absolute
-          left-0
-          text-lg
-          ml-2
-          button-color
-          p-2
-          rounded-full
-          opacity-70
-        "
-        (click)="AnteriorImagen()"
-      >
+      <button class="slider-button-left symbol" (click)="AnteriorImagen()">
         <
       </button>
+      <button class="slider-button" routerLink="/project">Ver mas</button>
     </div>
 
     <div class="relative -mt-10 -ml-5 md:m-20">
@@ -170,7 +100,16 @@
         ></p>
       </div>
       <div id="subtitle-about-project" class="flex flex-col">
-        <h1 class="text-xs md:text-base mt-4 font-light md:mr-10 md:max-w-lg">
+        <h1
+          class="
+            text-xs
+            md:text-base
+            mt-4
+            font-light
+            md:mr-10 md:max-w-lg
+            text-justify
+          "
+        >
           Como desarrollador he realizado varios proyectos entre ellos se
           encuentra un sistema hecho para laboratorios RedLab el mismo que
           realiza facturacion electronica y la contabilidad de la empresa, fue
