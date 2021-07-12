@@ -9,7 +9,7 @@
 }
 
 .slider-button {
-  @apply absolute mt-44 text-lg px-3 rounded-full flex font-light items-center justify-center transform hover:scale-125 cursor-pointer transition duration-300;
+  @apply absolute md:mt-44 text-lg px-3 rounded-full flex font-light items-center justify-center transform hover:scale-125 cursor-pointer transition duration-300;
   background-color: #fe5757;
 }
 
