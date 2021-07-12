@@ -1,0 +1,21 @@
+.imagen-fija {
+  background-repeat: no-repeat;
+}
+
+.rotacion-estrella {
+  transform: rotate(-10deg);
+}
+
+.imagenLogo {
+  overflow: true;
+}
+
+.title_welcome {
+  position: absolute;
+  top: 45%;
+  right: 30%;
+}
+
+.margen {
+  margin-top: 47%;
+}

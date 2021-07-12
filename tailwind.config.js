@@ -18,12 +18,26 @@ module.exports = {
         'fuentePrincipal': ['Oswald', 'sans-serif']
       },
       backgroundImage: theme => ({
-        'luna': "url('https://res.cloudinary.com/latamarket/image/upload/v1624468505/luna_aghhs8.png')",
+        'luna': "url(/assets/img/BannerTech.png)",
+        'banner-tech': "url(/assets/img/BannerTech.png)",
+        'banner-proyecto': "url(/assets/img/BannerProyecto.png)",
+        'banner-proyecto-login': "url(/assets/img/BannerLogin.png)",
+        'banner-proyecto-principal': "url(/assets/img/BannerPrincipal.png)",
         'tierra': "url(/assets/img/EartWallpaper.png)",
         'estrellas': "url('https://res.cloudinary.com/latamarket/image/upload/v1624510634/stars_xrkrjt.png')",
         'estrellas-fugaz': "url('https://res.cloudinary.com/latamarket/image/upload/v1624513512/estrellafugaz1_p5efuk.png')",
-        'fondo-espacio': "url(/assets/img/FondoEspacial_remspv.png)",
+        'fondo-espacio': "url(assets/img/FondoEspacial_remspv.png)",
         'nave-espacial': "url('https://res.cloudinary.com/latamarket/image/upload/v1624516120/NaveEspacial_trz1lx.png')",
+      }),
+      height: theme => ({
+        "screen/2": "50vh",
+        "screen/3": "calc(100vh / 3)",
+        "screen/4": "calc(100vh / 4)",
+        "screen/5": "calc(100vh / 5)",
+        "screen55": "55vh",
+        "screen60": "60vh",
+        "screen70": "70vh",
+        "screen80": "80vh",
       }),
       animation: {
         'bg-luna': 'backLuna 50s linear infinite',
@@ -31,7 +45,15 @@ module.exports = {
         'bg-estrella-fugaz': 'backEstrellaFugaz 10s linear infinite',
         'bg-fondo-espacio': 'backEspacio 900s linear infinite',
         'bg-nave-espacial': 'backNaveEspacial 40s linear infinite',
-        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite'
+        'bg-nave-espacial-xs': 'backNaveEspacialXS 40s linear infinite',
+        'enter-card': 'enterCard 1s ',
+        'exit-card': 'exitCard 1s ',
+        'rigth-to-left': 'enterFromLeft 0.5s linear',
+        'left-to-right': 'enterFromRight 0.5s linear',
+        'left-to-right_1s': 'enterFromRight 0.3s linear',
+        'left-to-right_1.5s': 'enterFromRight 0.8s linear',
+        'back-to-left': 'backToLeft 0.5s linear',
+        'back-to-right': 'backToRight 0.5s linear',
       },
       keyframes: {
         backLuna: {
@@ -58,13 +80,37 @@ module.exports = {
           '0%': { transform: "translate(4000px,5000px)" },
           '100%': { transform: "translate(-200%,-200%)" },
         },
-
+        enterCard: {
+          '0%': { transform: "scale(0.5)" },
+          '100%': { transform: "scale(1)" },
+        },
+        exitCard: {
+          '0%': { transform: "scale(1)" },
+          '100%': { transform: "scale(0.5)" },
+        },
+        enterFromLeft: {
+          '0%': { transform: "translate(100%,0%)" },
+          '100%': { transform: "translate(0%,0%)" },
+        },
+        enterFromRight: {
+          '0%': { transform: "translate(-100%,0%)" },
+          '100%': { transform: "translate(0%,0%)" },
+        },
+        backToLeft: {
+          '0%': { transform: "translate(0%,0%)" },
+          '100%': { transform: "translate(-100%,0%)" },
+        },
+        backToRight: {
+          '0%': { transform: "translate(00%,0%)" },
+          '100%': { transform: "translate(100%,0%)" },
+        }
       }
     },
   },
   variants: {
     opcity: ['responsive', 'hover', 'focus', 'disabled'],
     extend: {},
+    transitionProperty: ['responsive', 'motion-safe', 'motion-reduce']
   },
   plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
 };

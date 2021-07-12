@@ -1,0 +1,28 @@
+.color {
+  height: 55vh;
+  background-color: #041832;
+}
+
+.nuevo-size {
+  height: 80vh;
+  background-color: #041832;
+}
+/* .color:before {
+  content: "";
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: linear-gradient(90deg, #49050d 100%, #ad55c1 50%);
+  opacity: 0.3;
+} */
+
+.color-lines {
+  background-color: #fe5757;
+}
+
+.button-color {
+  background-color: #fe5757;
+}

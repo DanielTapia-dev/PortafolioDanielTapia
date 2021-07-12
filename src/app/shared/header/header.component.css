@@ -1,5 +1,5 @@
 .item-header {
-  @apply mr-5 transition duration-300 transform hover:scale-125 cursor-pointer;
+  @apply mr-6 transition duration-300 transform hover:scale-125 cursor-pointer;
 }
 
 .position-header {
@@ -16,4 +16,5 @@
 
 .tamanio {
   width: 100%;
+  z-index: 100;
 }
