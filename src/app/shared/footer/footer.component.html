@@ -1,5 +1,68 @@
-<div class="">
-  <div class="">
-    <h1 class="text-white text-8xl pt-40">Contactos:</h1>
+<div
+  class="
+    flex flex-col
+    md:flex-row
+    h-screen
+    justify-center
+    items-center
+    pb-28
+    md:pb-80
+  "
+>
+  <div id="contenedor" class="z-20">
+    <div class="flex flex-row justify-center">
+      <img
+        class="w-14 md:w-20 my-2 md:mx-7 zoom"
+        src="assets/img/color-whatsapp.png"
+        alt=""
+      />
+    </div>
+
+    <div id="boton" class="absolute flex flex-col left-1/3 right-1/3">
+      <div class="bg-white rounded-xl px-2 py-4 posicion text-center">
+        <div class="flex flex-col md:flex-row justify-center">
+          <h3 class="font-bold">Teléfono:&nbsp;</h3>
+          <h3 class="">0987408783</h3>
+        </div>
+      </div>
+    </div>
   </div>
+  <img
+    id="contactos"
+    class="w-14 md:w-20 my-2 md:mx-7 zoom"
+    src="assets/img/facebook.png"
+    (click)="sendToPage('facebook')"
+  />
+  <div id="contenedor" class="z-20">
+    <div class="flex flex-row justify-center">
+      <img
+        class="w-14 md:w-20 my-2 md:mx-7 zoom"
+        src="assets/img/email.png"
+        alt=""
+      />
+    </div>
+
+    <div id="boton" class="absolute flex flex-col left-1/3 right-1/3">
+      <div class="bg-white rounded-xl px-2 py-4 posicion text-center">
+        <div class="flex flex-col md:flex-row justify-center">
+          <h3 class="font-bold">Correo:&nbsp;</h3>
+          <h3 class="">d.tapialopez1@gmail.com</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <img
+    id="contactos"
+    class="w-14 md:w-20 my-2 md:mx-7 zoom"
+    src="assets/img/instagram.png"
+    style="z-index: initial"
+    (click)="sendToPage('instagram')"
+  />
+  <img
+    id="contactos"
+    class="w-14 md:w-20 my-2 md:mx-7 zoom"
+    src="assets/img/linkedin.png"
+    (click)="sendToPage('linkedin')"
+  />
 </div>

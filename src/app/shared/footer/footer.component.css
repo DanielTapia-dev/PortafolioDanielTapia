@@ -1,3 +1,27 @@
 .posicion-footer {
   position: absolute;
 }
+
+.zoom {
+  @apply transition duration-300 transform hover:scale-125 cursor-pointer;
+}
+
+#boton {
+  display: none;
+}
+
+#contenedor:hover > #boton {
+  display: block;
+}
+
+.triangulo-equilatero-bottom {
+  width: 0;
+  height: 0;
+  border-bottom: 10px solid white;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.posicion {
+  z-index: 1;
+}
