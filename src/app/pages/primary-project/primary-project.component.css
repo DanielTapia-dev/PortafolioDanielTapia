@@ -19,3 +19,25 @@
 .margen {
   margin-top: 47%;
 }
+
+.item-header {
+  @apply mr-6 transition duration-300 transform hover:scale-125 cursor-pointer md:mx-6;
+  color: white;
+}
+
+.slider-button-right {
+  @apply absolute right-0 text-xs mr-2 rounded-full h-6 w-6 flex font-light  items-center justify-center opacity-70 transform hover:scale-125 cursor-pointer transition duration-300;
+  background-color: #fe5757;
+}
+
+.slider-button-left {
+  @apply absolute left-0 text-xs ml-2 rounded-full h-6 w-6 flex font-light  pr-1 items-center justify-center opacity-70 transform hover:scale-125 cursor-pointer transition duration-300;
+  background-color: #fe5757;
+}
+
+.button-color {
+  background-color: #fe5757;
+}
+.color-lines {
+  background-color: #fe5757;
+}

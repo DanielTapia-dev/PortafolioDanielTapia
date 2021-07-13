@@ -8,5 +8,391 @@
     h-screen
   "
 >
-  <h1 class="text-white">Proyecto RedLab</h1>
+  <div class="container">
+    <app-header></app-header>
+  </div>
+  <div class="mt-20 mx-10">
+    <div class="flex flex-col justify-center items-center">
+      <img class="w-2/6" src="assets/img/redlab.png" />
+      <div class="flex flex-row mt-4 text-xs md:text-xl lg:text-2xl">
+        <nav class="flex-1">
+          <ul class="flex flex-row justify-end">
+            <li class="item-header">
+              <a (click)="GoToDiv('front')">FRONT-END</a>
+            </li>
+            <li class="item-header">
+              <a (click)="GoToDiv('back')">BACK-END</a>
+            </li>
+            <li class="item-header">
+              <a (click)="GoToDiv('fact')">FACTURACION ELECTRONICA</a>
+            </li>
+            <li class="item-header">
+              <a (click)="GoToDiv('demo')">DEMO</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex flex-col items-center md:flex-row mt-5 mx-5">
+        <img
+          class="w-11/12 md:w-3/5 mr-6 rounded-lg"
+          src="assets/img/BannerPrincipal.png"
+        />
+        <h3
+          class="
+            text-gray-500
+            pt-5
+            text-base
+            md:text-base
+            lg:text-xl
+            text-justify
+            md:ml-2
+          "
+        >
+          REDLAB es una red de laboratorios médicos clínicos en la ciudad de
+          Latacunga actualmente cuenta con 3 sucursales.<br />
+          El sistema de redlab cuenta con una arquitectura cliente-servidor por
+          lo que se escogieron dos tecnologias para realizar esta labor, estas
+          son: Angular para el front-end y Nodejs para el back-end, ademas se
+          utilizo una plantilla PRO adquirida en el sitio de wrappixel.com con
+          el fin de no cargar el sistema con funciones inecesarias de la
+          plantilla se utilizo unicamente todos los estilos css de la plantilla
+          y los componentes especificos que el sistema necesitaba.
+        </h3>
+      </div>
+      <h1
+        id="front"
+        class="
+          text-5xl
+          pt-10
+          text-fuchsia
+          font-medium
+          md:text-6xl
+          lg:text-8xl
+          animate-pulse
+        "
+      >
+        FRONT-END
+      </h1>
+      <h3
+        class="
+          text-gray-500
+          pt-5
+          text-base
+          md:text-base
+          lg:text-xl
+          text-justify
+          mx-16
+        "
+      >
+        Este cuenta con varios modulos que realizan diferentes procesos algunos
+        entrelazados entre si como las proformas y las facturas.
+      </h3>
+      <div class="flex flex-row justify-center">
+        <h3
+          class="
+            text-fuchsia
+            pt-5
+            text-xl
+            font-semibold
+            lg:text-4xl
+            text-justify
+            md:ml-2 md:text-2xl
+          "
+        >
+          Dashboard
+        </h3>
+      </div>
+      <div class="flex flex-col items-center md:flex-row mt-5 mx-5">
+        <h3
+          class="
+            text-gray-500
+            pt-2
+            text-base
+            md:text-base md:pr-4
+            lg:text-xl
+            text-justify
+            md:ml-2
+            mb-4
+          "
+        >
+          Este modulo es la pagina principal de todo el sitio, esta pensado para
+          funcionar como panel de control mostrando gráficas o actividades
+          pendientes del usuario que se conecta el mismo no fue terminado porque
+          no estaba contemplado en los requerimientos del sistema, pero hace muy
+          escalable al mismo.
+        </h3>
+        <img
+          class="w-11/12 md:w-3/5 mr-2 rounded-lg"
+          src="assets/img/PrimaryPage.png"
+        />
+        <div class="flex flex-col"></div>
+      </div>
+      <div class="flex flex-row justify-center">
+        <h3
+          class="
+            text-fuchsia
+            pt-5
+            text-xl
+            font-semibold
+            md:text-2xl
+            lg:text-4xl
+            text-justify
+            md:ml-2
+          "
+        >
+          SideBar
+        </h3>
+      </div>
+      <h3
+        class="
+          text-gray-500
+          pt-2
+          text-base
+          md:text-base
+          lg:text-xl
+          text-justify
+          md:ml-2
+          mb-4
+          mx-4
+        "
+      >
+        En el sidebar se puede acceder a todas las funcionalidades del sistema
+      </h3>
+      <div class="flex flex-row justify-center md:flex-row mt-1 mx-5">
+        <img class="w-3/4 mr-2 rounded-lg" src="assets/img/Sidebar.png" />
+      </div>
+      <div class="flex flex-row justify-center">
+        <h1
+          id="back"
+          class="
+            text-5xl
+            pt-10
+            text-fuchsia
+            font-medium
+            md:text-6xl
+            lg:text-8xl
+            animate-pulse
+          "
+        >
+          BACK-END
+        </h1>
+      </div>
+      <div class="flex flex-col items-center mt-5 mx-5">
+        <h3
+          class="
+            text-gray-500
+            pt-2
+            text-base
+            md:text-base
+            lg:text-xl
+            text-justify
+            md:ml-2
+            mb-4
+            mr-4
+          "
+        >
+          Este funciona mediante express y una base de datos relacional en
+          PostgreSQL, se creo una API Rest para conectar el Front-End con el
+          Back-End, para realizar la facturacion electronica el mismo tiene
+          almacenada la firma electronica del cliente y se conecta directamente
+          con el servidore de facturacion electronica del SRI y actualmente se
+          encuentra en fase de produccion, vale recalcar que el sistema esta
+          desarrollado con Javascript puro a diferencia del Front-End que
+          utiliza TypeScript.
+        </h3>
+        <img
+          class="w-11/12 mr-2 bg-white rounded-lg"
+          src="assets/img/PostgreSQL.png"
+        />
+        <div class="flex flex-col"></div>
+      </div>
+      <div class="flex flex-row justify-center">
+        <h1
+          id="fact"
+          class="
+            text-4xl
+            pt-10
+            text-fuchsia
+            font-medium
+            md:text-6xl
+            lg:text-8xl
+            animate-pulse
+          "
+        >
+          FACTURACION ELECTRONICA
+        </h1>
+      </div>
+      <div class="flex flex-col items-center md:flex-row mt-5 mx-5">
+        <h3
+          class="
+            text-gray-500
+            pt-2
+            text-base
+            md:text-base
+            lg:text-xl
+            text-justify
+            md:ml-2
+            mb-4
+            lg:mr-8
+          "
+        >
+          Este es el modulo más importante del sistema ya que automatiza por
+          completo el proceso de facturación, a continuacion se muestra la
+          pantalla principal desde donde el cajero puede facturar facilmente,
+          como se puede ver existe un buscador de cedula, y botones que sirven
+          para agregar un nuevo cliente, facturar como consumidor final o
+          eliminar el cliente para asignar uno nuevo a la factura, más abajo se
+          puede observar el buscador de productos con el cual se podrá ir
+          ingresando productos a la factura.
+        </h3>
+        <img
+          class="w-11/12 md:w-3/5 mr-2 bg-white rounded-lg"
+          src="assets/img/FactPage.png"
+        />
+        <div class="flex flex-col"></div>
+      </div>
+      <div class="flex flex-col items-center mt-5">
+        <div class="flex flex-row justify-center">
+          <h1
+            class="
+              text-4xl
+              pt-6
+              text-fuchsia
+              font-medium
+              md:text-4xl
+              lg:text-6xl
+              mb-6
+            "
+          >
+            Escogiendo la forma de pago
+          </h1>
+        </div>
+        <div
+          id="card-project"
+          class="
+            animate-enter-card
+            relative
+            w-screen45
+            h-screen/3
+            md:w-screen80 md:h-screen/2
+            rounded-xl
+            overflow-hidden
+            flex flex-col
+            items-center
+            justify-center
+            bg-forma-pago-1 bg-no-repeat bg-center bg-contain
+          "
+          *ngIf="imageBanner == true"
+        >
+          <button
+            class="slider-button-right symbol"
+            (click)="SiguienteImagen()"
+          >
+            >
+          </button>
+          <button class="slider-button-left symbol" (click)="AnteriorImagen()">
+            <
+          </button>
+        </div>
+        <div
+          id="card-project"
+          class="
+            animate-enter-card
+            relative
+            w-screen45
+            h-screen/3
+            md:w-screen80 md:h-screen/2
+            rounded-xl
+            overflow-hidden
+            flex flex-col
+            items-center
+            justify-center
+            bg-forma-pago-2 bg-no-repeat bg-center bg-contain
+          "
+          *ngIf="imageLogin == true"
+        >
+          <button
+            class="slider-button-right symbol"
+            (click)="SiguienteImagen()"
+          >
+            >
+          </button>
+          <button class="slider-button-left symbol" (click)="AnteriorImagen()">
+            <
+          </button>
+        </div>
+      </div>
+      <div class="text-gray-500 pt-2 text-2xl" *ngIf="imageBanner == true">
+        <h1>
+          Una vez la factura esta realizada se elige la forma de pago en una
+          ventana modal con un buscador de las formas de pago existentes.
+        </h1>
+      </div>
+      <div class="text-gray-500 pt-2 text-2xl" *ngIf="imageLogin == true">
+        <h1>Se puede pagar con varias formas de pago a la vez</h1>
+      </div>
+    </div>
+    <div class="flex flex-row justify-center">
+      <h1
+        id="back"
+        class="text-5xl pt-10 text-fuchsia font-medium md:text-4xl lg:text-6xl"
+      >
+        PDF
+      </h1>
+    </div>
+    <div class="flex flex-col items-center mt-5 mx-5">
+      <h3
+        class="
+          text-gray-500
+          pt-2
+          text-base
+          md:text-base
+          lg:text-xl
+          text-justify
+          md:ml-2
+          mb-4
+          mr-4
+        "
+      >
+        Esta es la factura en formato pdf que se envia directamente al cliente,
+        en este caso es una factura de pruebas pero el sistema ya se encuentra
+        en producción.
+      </h3>
+      <img class="w-2/3 mr-2 bg-white rounded-lg" src="assets/img/pdf.png" />
+      <div class="flex flex-col"></div>
+    </div>
+    <div class="flex flex-row justify-center">
+      <h1
+        id="demo"
+        class="
+          text-5xl
+          pt-10
+          text-fuchsia
+          font-medium
+          md:text-6xl
+          lg:text-8xl
+          animate-pulse
+        "
+      >
+        DEMO
+      </h1>
+    </div>
+    <div class="flex flex-col items-center mt-5 mx-5">
+      <h3
+        class="
+          text-gray-500
+          pt-2
+          text-base
+          md:text-base
+          lg:text-xl
+          text-justify
+          md:ml-2
+          mb-4
+          mr-4
+        "
+      >
+        Mil disculpas esta funcion se habilitara pronto.
+      </h3>
+    </div>
+  </div>
 </div>

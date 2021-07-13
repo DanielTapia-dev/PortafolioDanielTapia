@@ -11,23 +11,18 @@ import { ContactComponent } from './shared/contact/contact.component';
 import { ProyectoPrincipalComponent } from './shared/proyecto-principal/proyecto-principal.component';
 import { AboutMeComponent } from './shared/about-me/about-me.component';
 import { PresentationComponent } from './shared/presentation/presentation.component';
+import { PagesModule } from './pages/pages.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    PagesComponent,
-    FooterComponent,
-    SidebarComponent,
-    ContactComponent,
-    ProyectoPrincipalComponent,
-    AboutMeComponent,
-    PresentationComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PagesModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
