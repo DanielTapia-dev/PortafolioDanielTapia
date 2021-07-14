@@ -21,19 +21,14 @@ export class ProyectosComponent implements OnInit {
   imagenActiva: any;
   primaryContainer: any;
   imageIndex: number = 0;
+  projectIndex: number = 0;
   currentImage: any;
   proyectos: any = []
 
   ngOnInit(): void {
-    this.primaryContainer = document.querySelector('#primary-container');
-    this.btnExit = document.querySelector('#btn-exit');
-    this.btnBehind = document.querySelector('#btn-behind');
-    this.btnNext = document.querySelector('#btn-next');
-    this.imagenes = document.querySelectorAll('#galeria img');
-    this.imagenActiva = document.querySelector('#active-image');
   }
 
-  openLightbox(image: string) {
+  openLightbox(image: string, i: number) {
     this.imagenActiva = document.querySelector('#active-image');
     this.primaryContainer = document.querySelector('#primary-container');
     this.btnExit = document.querySelector('#btn-exit');
@@ -44,6 +39,7 @@ export class ProyectosComponent implements OnInit {
     this.imagenActiva.src = image;
     this.primaryContainer.style.display = 'flex';
     this.imageIndex = Array.from(this.imagenes).indexOf(this.currentImage);
+    this.projectIndex = i;
   }
 
   /*Cerrar el lightbox*/
@@ -54,18 +50,15 @@ export class ProyectosComponent implements OnInit {
 
   /*Siguiente Imagen en el lightbox*/
   NextImage(index: number, nombre: any) {
-    console.log(nombre);
-
     this.imagenes = document.querySelectorAll('#galeria img');
-    //console.log(this.imagenes[this.imageIndex + 1]);
-    if (this.imageIndex === (3 + ((index + 1) * 4))) {
-      this.imageIndex = -1 + ((index + 1) * 4);
+    if (this.imageIndex === (3 + ((this.projectIndex) * 4))) {
+      this.imageIndex = -1 + ((this.projectIndex) * 4);
     }
     this.imagenActiva.src = this.imagenes[this.imageIndex + 1].src;
     this.imageIndex++;
   }
 
   /*Anterior imagen en el lightbox*/
-  PreviousImage() { }
+  PreviousImage(index: number) { console.log(index); }
 
 }

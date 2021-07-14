@@ -21,25 +21,25 @@
         <section id="galeria">
           <img
             id="{{ proyecto.img_1 }}"
-            (click)="openLightbox(proyecto.img_1)"
+            (click)="openLightbox(proyecto.img_1, i)"
             src="{{ proyecto.img_1 }}"
             alt="galeria de imagenes"
           />
           <img
             id="{{ proyecto.img_2 }}"
-            (click)="openLightbox(proyecto.img_2)"
+            (click)="openLightbox(proyecto.img_2, i)"
             src="{{ proyecto.img_2 }}"
             alt="galeria de imagenes"
           />
           <img
             id="{{ proyecto.img_3 }}"
-            (click)="openLightbox(proyecto.img_3)"
+            (click)="openLightbox(proyecto.img_3, i)"
             src="{{ proyecto.img_3 }}"
             alt="galeria de imagenes"
           />
           <img
             id="{{ proyecto.img_4 }}"
-            (click)="openLightbox(proyecto.img_4)"
+            (click)="openLightbox(proyecto.img_4, i)"
             src="{{ proyecto.img_4 }}"
             alt="galeria de imagenes"
           />
@@ -62,7 +62,7 @@
             <button
               id="btn-behind"
               class="symbol"
-              (click)="PreviousImage()"
+              (click)="PreviousImage(i)"
               type="button"
             >
               <
