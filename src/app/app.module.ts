@@ -12,6 +12,7 @@ import { ProyectoPrincipalComponent } from './shared/proyecto-principal/proyecto
 import { AboutMeComponent } from './shared/about-me/about-me.component';
 import { PresentationComponent } from './shared/presentation/presentation.component';
 import { PagesModule } from './pages/pages.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
+    HttpClientModule,
   ],
   exports: [],
   providers: [],
