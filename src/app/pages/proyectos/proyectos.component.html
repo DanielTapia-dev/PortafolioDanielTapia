@@ -9,14 +9,26 @@
   "
 >
   <div><app-header></app-header></div>
-  <div class="mt-28" *ngFor="let proyecto of proyectos; let i = index">
+  <div class="mt-28 mx-12" *ngFor="let proyecto of proyectos; let i = index">
     <div class="flex flex-row justify-center animate-bounce">
-      <h1 class="text-8xl text-fuchsia">{{ proyecto.nombre }}</h1>
+      <h1 class="text-6xl md:text-8xl text-fuchsia text-center">
+        {{ proyecto.nombre }}
+      </h1>
+    </div>
+    <div class="flex flex-row justify-center">
+      <h1 class="text-xl md:text-4xl text-fuchsia text-center">
+        Tecnología:&nbsp;
+      </h1>
+      <h1 class="text-xl md:text-4xl text-white text-center">
+        {{ proyecto.tecnologia }}
+      </h1>
     </div>
     <div class="flex flex-col pt-10">
-      <div class="flex flex-row justify-center items-center">
+      <div class="flex flex-col md:flex-row justify-center items-center">
         <div>
-          <h1 class="text-sm text-white">{{ proyecto.descripcion }}</h1>
+          <h1 class="text-lg text-white text-justify mb-10 md:mb-0 md:mr-16">
+            {{ proyecto.descripcion }}
+          </h1>
         </div>
         <section id="galeria">
           <img
@@ -44,6 +56,7 @@
             alt="galeria de imagenes"
           />
         </section>
+
         <section id="primary-container">
           <div id="internal-container">
             <img
@@ -79,75 +92,19 @@
         </section>
       </div>
     </div>
-    <!-- <div class="flex flex-row justify-center animate-bounce">
-      <h1 class="text-8xl text-fuchsia">Proyecto RedLab</h1>
+    <div class="mt-10 flex flex-col items-center">
+      <h2 class="text-fuchsia text-2xl mb-2">Enlace (página oficial)</h2>
+      <a
+        class="text-blue-500 text-sm md:text-xl"
+        href="{{ proyecto.enlace }}"
+        >{{ proyecto.enlace }}</a
+      >
+      <a class="text-white" *ngIf="!proyecto.enlace"
+        >La página aun no esta disponible</a
+      >
     </div>
-    <div class="flex flex-col pt-10">
-      <div class="flex flex-row justify-center items-center">
-        <div>
-          <h1 class="text-8xl text-white">Hola</h1>
-        </div>
-        <section id="galeria">
-          <img
-            id="imagen1"
-            (click)="openLightbox('imagen1')"
-            src="https://res.cloudinary.com/latamarket/image/upload/v1626237474/marketzone1_lxvwak.png"
-            alt="galeria de imagenes"
-          />
-          <img
-            id="imagen2"
-            (click)="openLightbox('imagen2')"
-            src="https://res.cloudinary.com/latamarket/image/upload/v1626237474/marketzone1_lxvwak.png"
-            alt="galeria de imagenes"
-          />
-          <img
-            id="imagen3"
-            (click)="openLightbox('imagen3')"
-            src="https://res.cloudinary.com/latamarket/image/upload/v1626237474/marketzone1_lxvwak.png"
-            alt="galeria de imagenes"
-          />
-          <img
-            id="imagen4"
-            (click)="openLightbox('imagen4')"
-            src="https://res.cloudinary.com/latamarket/image/upload/v1626237474/marketzone1_lxvwak.png"
-            alt="galeria de imagenes"
-          />
-        </section>
-
-        <section id="primary-container">
-          <div id="internal-container">
-            <img
-              id="active-image"
-              src="https://res.cloudinary.com/latamarket/image/upload/v1626226214/redlabimg1_uou083.png"
-              alt="galeria de imagenes"
-            />
-            <button
-              id="btn-exit"
-              class="symbol"
-              (click)="exitLightBox()"
-              type="button"
-            >
-              '
-            </button>
-            <button
-              id="btn-behind"
-              class="symbol"
-              (click)="PreviousImage()"
-              type="button"
-            >
-              <
-            </button>
-            <button
-              id="btn-next"
-              class="symbol"
-              (click)="NextImage()"
-              type="button"
-            >
-              >
-            </button>
-          </div>
-        </section>
-      </div>
-    </div> -->
+  </div>
+  <div class="relative h-screen md:h-screen">
+    <app-footer></app-footer>
   </div>
 </div>

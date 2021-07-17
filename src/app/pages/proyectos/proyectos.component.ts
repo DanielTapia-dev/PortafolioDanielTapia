@@ -42,6 +42,19 @@ export class ProyectosComponent implements OnInit {
     this.projectIndex = i;
   }
 
+  openProject(image: string) {
+    this.imagenActiva = document.querySelector('#active-image');
+    this.primaryContainer = document.querySelector('#primary-container');
+    this.btnExit = document.querySelector('#btn-exit');
+    this.btnBehind = document.querySelector('#btn-behind');
+    this.btnNext = document.querySelector('#btn-next');
+    this.imagenes = document.querySelectorAll('#galeria img');
+    this.currentImage = document.getElementById(image) as HTMLImageElement;
+    this.imagenActiva.src = image;
+    this.primaryContainer.style.display = 'flex';
+    this.imageIndex = Array.from(this.imagenes).indexOf(this.currentImage);
+  }
+
   /*Cerrar el lightbox*/
 
   exitLightBox() {
