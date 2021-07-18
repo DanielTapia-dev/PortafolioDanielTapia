@@ -5,6 +5,7 @@ import { PrimaryProjectComponent } from './primary-project/primary-project.compo
 import { HeaderComponent } from '../shared/header/header.component';
 import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -12,7 +13,8 @@ import { PagesComponent } from './pages.component';
   declarations: [
     ProyectosComponent,
     PrimaryProjectComponent,
-    PagesComponent
+    PagesComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,

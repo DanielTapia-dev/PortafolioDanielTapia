@@ -1,0 +1,475 @@
+<div
+  class="
+    bg-fondo-espacio
+    fondo
+    animate-bg-fondo-espacio
+    bg-contain
+    overflow-auto
+    h-screen
+  "
+>
+  <div class="container">
+    <app-header></app-header>
+  </div>
+  <div class="mt-28 mx-10">
+    <div class="flex flex-col justify-center items-center">
+      <div class="flex flex-row lg:items-start items-center">
+        <h1
+          id="nombre"
+          class="
+            text-white text-5xl
+            md:text-7xl
+            lg:text-8xl
+            xl:text-9xl
+            font-bold
+          "
+        >
+          DANIEL&nbsp;
+        </h1>
+        <h1
+          class="
+            text-5xl
+            md:text-7xl
+            lg:text-8xl
+            xl:text-9xl
+            font-bold
+            text-yellow-400
+          "
+        >
+          TAPIA
+        </h1>
+      </div>
+      <div class="flex flex-row mt-8 text-xs md:text-xl lg:text-2xl">
+        <nav class="flex-1">
+          <ul class="flex flex-row justify-end">
+            <li class="item-header">
+              <a (click)="GoToDiv('front')">PERFIL</a>
+            </li>
+            <li class="item-header">
+              <a (click)="GoToDiv('back')">EDUCACION</a>
+            </li>
+            <li class="item-header">
+              <a (click)="GoToDiv('fact')">CERTIFICACIONES</a>
+            </li>
+            <li class="item-header">
+              <a (click)="GoToDiv('demo')">EXPERIENCIA</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <h1
+        id="front"
+        class="
+          text-5xl
+          pt-10
+          text-fuchsia
+          font-medium
+          md:text-6xl
+          lg:text-8xl
+          animate-pulse
+        "
+      >
+        PERFIL
+      </h1>
+      <h3
+        class="
+          text-gray-500
+          pt-5
+          text-base
+          md:text-base
+          lg:text-xl
+          text-justify
+        "
+      >
+        Soy estudiante de la Universidad Técnica de Ambato actualmente cursando
+        9no semestre de la carrera de Ingeniería en Sistemas Computacionales e
+        Informáticos (fecha de egreso: 20 de agosto de 2021) entre mis
+        cualidades se destaca los conocimientos en javascript y el manejo de
+        frameworks de actualidad como Angular o Flutter, además de esto también
+        conozco acerca de buenas prácticas de programación por cursos realizados
+        en la Universidad Politécnica Nacional, donde se exploraron distintas
+        vulnerabilidades que dejan los programadores al desarrollar sistemas.
+      </h3>
+      <div class="flex flex-col w-full md:flex-row mt-4">
+        <div class="flex flex-col w-full md:w-1/2">
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Edad:&nbsp;</h2>
+            <h2 class="text-gray-500">26 años</h2>
+          </div>
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Ciudad actual:&nbsp;</h2>
+            <h2 class="text-gray-500">Latacunga - Ecuador</h2>
+          </div>
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Nacionalidad:&nbsp;</h2>
+            <h2 class="text-gray-500">Ecuatoriano</h2>
+          </div>
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Hobbies:&nbsp;</h2>
+            <h2 class="text-gray-500">
+              Aprender en cursos online y crear aplicaciones moviles
+            </h2>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:w-1/2 md:ml-2">
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Teléfono:&nbsp;</h2>
+            <h2 class="text-gray-500">0987408783</h2>
+          </div>
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Correo:&nbsp;</h2>
+            <h2 class="text-gray-500">d.tapialopez1@gmail.com</h2>
+          </div>
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Idiomas:&nbsp;</h2>
+            <h2 class="text-gray-500">Ingles-Español</h2>
+          </div>
+          <div class="flex flex-row">
+            <h2 class="text-fuchsia">Teléfono:&nbsp;</h2>
+            <h2 class="text-gray-500">0987408783</h2>
+          </div>
+        </div>
+      </div>
+      <h1 class="text-fuchsia text-3xl md:text-4xl lg:text-6xl mt-10">
+        Competencias
+      </h1>
+      <div class="flex flex-col w-full mt-10 md:flex-row">
+        <div class="flex flex-col w-full md:w-1/2">
+          <div class="flex flex-row w-full">
+            <img src="assets/img/typescript_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Typescript</p>
+              <div
+                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
+              ></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/javascript_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Javascript</p>
+              <div
+                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
+              ></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/angular_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Angular</p>
+              <div
+                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
+              ></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/nodejs_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Node js</p>
+              <div
+                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
+              ></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/csharp_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">C#</p>
+              <div
+                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col w-full md:w-1/2">
+          <div class="flex flex-row">
+            <img
+              src="assets/img/sqlserver_logo.png"
+              class="w-16 my-2.5"
+              alt=""
+            />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Sql server</p>
+              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/mysql_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Mysql</p>
+              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/postgress_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Postgress</p>
+              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/dart_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Dart</p>
+              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            </div>
+          </div>
+          <div class="flex flex-row mt-2">
+            <img src="assets/img/flutter_logo.png" class="w-16" alt="" />
+            <div class="flex flex-col w-full pl-4 items-start justify-around">
+              <p class="text-white">Flutter</p>
+              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex flex-row justify-center">
+          <h1
+            id="back"
+            class="
+              text-5xl
+              pt-10
+              text-fuchsia
+              font-medium
+              md:text-6xl
+              lg:text-8xl
+              animate-pulse
+            "
+          >
+            BACK-END
+          </h1>
+        </div>
+        <div class="flex flex-col items-center mt-5">
+          <h3
+            class="
+              text-gray-500
+              pt-2
+              text-base
+              md:text-base
+              lg:text-xl
+              text-justify
+              md:ml-2
+              mb-4
+            "
+          >
+            Este funciona mediante express y una base de datos relacional en
+            PostgreSQL, se creo una API Rest para conectar el Front-End con el
+            Back-End, para realizar la facturacion electronica el mismo tiene
+            almacenada la firma electronica del cliente y se conecta
+            directamente con el servidore de facturacion electronica del SRI y
+            actualmente se encuentra en fase de produccion, vale recalcar que el
+            sistema esta desarrollado con Javascript puro a diferencia del
+            Front-End que utiliza TypeScript.
+          </h3>
+          <img
+            class="w-11/12 mr-2 bg-white rounded-lg"
+            src="assets/img/PostgreSQL.png"
+          />
+          <div class="flex flex-col"></div>
+        </div>
+        <div class="flex flex-row justify-center">
+          <h1
+            id="fact"
+            class="
+              text-4xl
+              pt-10
+              text-fuchsia
+              font-medium
+              md:text-6xl
+              lg:text-8xl
+              animate-pulse
+            "
+          >
+            FACTURACION ELECTRONICA
+          </h1>
+        </div>
+        <div class="flex flex-col items-center md:flex-row mt-5 mx-5">
+          <h3
+            class="
+              text-gray-500
+              pt-2
+              text-base
+              md:text-base
+              lg:text-xl
+              text-justify
+              md:ml-2
+              mb-4
+              lg:mr-8
+            "
+          >
+            Este es el modulo más importante del sistema ya que automatiza por
+            completo el proceso de facturación, a continuacion se muestra la
+            pantalla principal desde donde el cajero puede facturar facilmente,
+            como se puede ver existe un buscador de cedula, y botones que sirven
+            para agregar un nuevo cliente, facturar como consumidor final o
+            eliminar el cliente para asignar uno nuevo a la factura, más abajo
+            se puede observar el buscador de productos con el cual se podrá ir
+            ingresando productos a la factura.
+          </h3>
+          <img
+            class="w-11/12 md:w-3/5 mr-2 bg-white rounded-lg"
+            src="assets/img/FactPage.png"
+          />
+          <div class="flex flex-col"></div>
+        </div>
+        <div class="flex flex-col items-center mt-5">
+          <div class="flex flex-row justify-center">
+            <h1
+              class="
+                text-4xl
+                pt-6
+                text-fuchsia
+                font-medium
+                md:text-4xl
+                lg:text-6xl
+                mb-6
+              "
+            >
+              Escogiendo la forma de pago
+            </h1>
+          </div>
+          <div
+            id="card-project"
+            class="
+              animate-enter-card
+              relative
+              w-screen45
+              h-screen/3
+              md:w-screen80 md:h-screen/2
+              rounded-xl
+              overflow-hidden
+              flex flex-col
+              items-center
+              justify-center
+              bg-forma-pago-1 bg-no-repeat bg-center bg-contain
+            "
+            *ngIf="imageBanner == true"
+          >
+            <button
+              class="slider-button-right symbol"
+              (click)="SiguienteImagen()"
+            >
+              >
+            </button>
+            <button
+              class="slider-button-left symbol"
+              (click)="AnteriorImagen()"
+            >
+              <
+            </button>
+          </div>
+          <div
+            id="card-project"
+            class="
+              animate-enter-card
+              relative
+              w-screen45
+              h-screen/3
+              md:w-screen80 md:h-screen/2
+              rounded-xl
+              overflow-hidden
+              flex flex-col
+              items-center
+              justify-center
+              bg-forma-pago-2 bg-no-repeat bg-center bg-contain
+            "
+            *ngIf="imageLogin == true"
+          >
+            <button
+              class="slider-button-right symbol"
+              (click)="SiguienteImagen()"
+            >
+              >
+            </button>
+            <button
+              class="slider-button-left symbol"
+              (click)="AnteriorImagen()"
+            >
+              <
+            </button>
+          </div>
+        </div>
+        <div class="text-gray-500 pt-2 text-2xl" *ngIf="imageBanner == true">
+          <h1>
+            Una vez la factura esta realizada se elige la forma de pago en una
+            ventana modal con un buscador de las formas de pago existentes.
+          </h1>
+        </div>
+        <div class="text-gray-500 pt-2 text-2xl" *ngIf="imageLogin == true">
+          <h1>Se puede pagar con varias formas de pago a la vez</h1>
+        </div>
+      </div>
+      <div class="flex flex-row justify-center">
+        <h1
+          id="back"
+          class="
+            text-5xl
+            pt-10
+            text-fuchsia
+            font-medium
+            md:text-4xl
+            lg:text-6xl
+          "
+        >
+          PDF
+        </h1>
+      </div>
+      <div class="flex flex-col items-center mt-5 mx-5">
+        <h3
+          class="
+            text-gray-500
+            pt-2
+            text-base
+            md:text-base
+            lg:text-xl
+            text-justify
+            md:ml-2
+            mb-4
+            mr-4
+          "
+        >
+          Esta es la factura en formato pdf que se envia directamente al
+          cliente, en este caso es una factura de pruebas pero el sistema ya se
+          encuentra en producción.
+        </h3>
+        <img class="w-2/3 mr-2 bg-white rounded-lg" src="assets/img/pdf.png" />
+        <div class="flex flex-col"></div>
+      </div>
+      <div class="flex flex-row justify-center">
+        <h1
+          id="demo"
+          class="
+            text-5xl
+            pt-10
+            text-fuchsia
+            font-medium
+            md:text-6xl
+            lg:text-8xl
+            animate-pulse
+          "
+        >
+          DEMO
+        </h1>
+      </div>
+      <div class="flex flex-col items-center mt-5 mx-5">
+        <h3
+          class="
+            text-gray-500
+            pt-2
+            text-base
+            md:text-base
+            lg:text-xl
+            text-justify
+            md:ml-2
+            mb-4
+            mr-4
+          "
+        >
+          Mil disculpas esta funcion se habilitara pronto.
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
