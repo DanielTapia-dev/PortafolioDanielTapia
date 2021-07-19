@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
@@ -9,6 +9,10 @@ export class AboutComponent implements OnInit {
 
   imageBanner: boolean = true;
   imageLogin: boolean = false;
+  animado: any;
+  scrollTop: any;
+  altura: any;
+  screnSize: number = screen.height;
 
   SiguienteImagen() {
     if (this.imageBanner === true) {
@@ -29,10 +33,27 @@ export class AboutComponent implements OnInit {
     }
   }
 
-  constructor() { }
+  constructor() {
+    //this.imagenes = document.querySelectorAll('#galeria img');
+
+  }
 
   ngOnInit(): void {
+    this.animado = document.querySelectorAll(".anim");
   }
+
+  onScroll(event: any) {
+    this.screnSize = screen.height;
+    this.scrollTop = document.getElementById('about')?.scrollTop;
+    for (let i = 0; i < this.animado.length; i++) {
+      this.altura = this.animado[i].offsetTop;
+      if (this.altura - (this.screnSize - 10) < this.scrollTop) {
+        this.animado[i].classList.add('animate-left-to-right-competences');
+        this.animado[i].classList.remove('invisible');
+        this.animado[i].classList.add('visible');
+      }
+    }
+  };
 
   GoToDiv(page: string) {
     switch (page) {
@@ -51,6 +72,14 @@ export class AboutComponent implements OnInit {
       default:
         break;
     }
+  }
+
+
+
+
+  @HostListener('click') clicking() {
+    this.scrollTop = document.documentElement.scrollTop;
+    console.log(this.scrollTop);
   }
 
 }

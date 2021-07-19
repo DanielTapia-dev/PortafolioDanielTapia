@@ -1,4 +1,5 @@
 <div
+  id="about"
   class="
     bg-fondo-espacio
     fondo
@@ -7,6 +8,7 @@
     overflow-auto
     h-screen
   "
+  (scroll)="onScroll($event)"
 >
   <div class="container">
     <app-header></app-header>
@@ -138,47 +140,201 @@
         <div class="flex flex-col w-full md:w-1/2">
           <div class="flex flex-row w-full">
             <img src="assets/img/typescript_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Typescript</p>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Typescript</p>
+
+                <p class="text-fuchsia font-bold">90%</p>
+              </div>
+
               <div
-                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
-              ></div>
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 90%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/javascript_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Javascript</p>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Javascript</p>
+
+                <p class="text-fuchsia font-bold">90%</p>
+              </div>
               <div
-                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
-              ></div>
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 90%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/angular_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Angular</p>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Angular</p>
+
+                <p class="text-fuchsia font-bold">95%</p>
+              </div>
+
               <div
-                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
-              ></div>
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 95%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/nodejs_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Node js</p>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Node js</p>
+
+                <p class="text-white font-bold">85%</p>
+              </div>
+
               <div
-                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
-              ></div>
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 85%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/csharp_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">C#</p>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">C#</p>
+
+                <p class="text-white font-bold">80%</p>
+              </div>
+
               <div
-                class="bg-white w-full md:w-11/12 h-4 rounded-lg shadow-2xl"
-              ></div>
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 80%"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
@@ -189,37 +345,202 @@
               class="w-16 my-2.5"
               alt=""
             />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Sql server</p>
-              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Sql server</p>
+
+                <p class="text-white font-bold">75%</p>
+              </div>
+
+              <div
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 75%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/mysql_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Mysql</p>
-              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Mysql</p>
+
+                <p class="text-white font-bold">85%</p>
+              </div>
+
+              <div
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 85%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/postgress_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Postgress</p>
-              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Postgress</p>
+
+                <p class="text-white font-bold">80%</p>
+              </div>
+
+              <div
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 80%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/dart_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Dart</p>
-              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Dart</p>
+
+                <p class="text-white font-bold">60%</p>
+              </div>
+
+              <div
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 60%"
+                ></div>
+              </div>
             </div>
           </div>
           <div class="flex flex-row mt-2">
             <img src="assets/img/flutter_logo.png" class="w-16" alt="" />
-            <div class="flex flex-col w-full pl-4 items-start justify-around">
-              <p class="text-white">Flutter</p>
-              <div class="bg-white w-full h-4 rounded-lg shadow-2xl"></div>
+            <div
+              class="
+                flex flex-col
+                w-full
+                md:w-4/5
+                pl-4
+                items-start
+                justify-around
+              "
+            >
+              <div class="flex flex-row justify-between w-full">
+                <p class="text-white">Flutter</p>
+
+                <p class="text-white font-bold">60%</p>
+              </div>
+
+              <div
+                class="bg-white w-full h-3 border-none overflow-hidden"
+                style="border-radius: 10px"
+              >
+                <div
+                  class="
+                    bg-gradient-to-r
+                    from-purple-400
+                    via-pink-500
+                    to-red-500
+                    border-none
+                    invisible
+                    pl-8
+                    m-0
+                    h-full
+                    anim
+                  "
+                  style="border-radius: 10px; width: 60%"
+                ></div>
+              </div>
             </div>
           </div>
         </div>
