@@ -14,6 +14,9 @@ module.exports = {
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     extend: {
+      inset: {
+        '2/5': '47%',
+      },
       fontFamily: {
         'fuentePrincipal': ['Oswald', 'sans-serif']
       },
@@ -75,6 +78,8 @@ module.exports = {
         'back-to-left': 'backToLeft 0.5s linear',
         'back-to-right': 'backToRight 0.5s linear',
         'left-to-right-competences': 'enterFromRightCompetences 5s linear',
+        'right50': 'moveRight50 0.5s linear',
+        'text-banner': 'enterFromSmall 10s linear',
       },
       keyframes: {
         backLuna: {
@@ -128,7 +133,15 @@ module.exports = {
         backToRight: {
           '0%': { transform: "translate(0%,0%)" },
           '100%': { transform: "translate(100%,0%)" },
-        }
+        },
+        moveRight50: {
+          '0%': { transform: "translate(0%,0%)" },
+          '100%': { transform: "translate(500%,0%)" },
+        },
+        enterFromSmall: {
+          '0%': { transform: "scale(5,5)" },
+          '100%': { transform: "scale(1,1)" },
+        },
       }
     },
   },

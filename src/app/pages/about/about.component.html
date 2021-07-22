@@ -61,7 +61,7 @@
       </div>
 
       <h1
-        id="front"
+        id="perfil"
         class="
           text-5xl
           pt-10
@@ -548,7 +548,7 @@
       <div class="flex flex-col">
         <div class="flex flex-row justify-center">
           <h1
-            id="back"
+            id="educacion"
             class="
               text-5xl
               pt-10
@@ -559,172 +559,217 @@
               animate-pulse
             "
           >
-            BACK-END
+            EDUCACION
           </h1>
         </div>
-        <div class="flex flex-col items-center mt-5">
-          <h3
-            class="
-              text-gray-500
-              pt-2
-              text-base
-              md:text-base
-              lg:text-xl
-              text-justify
-              md:ml-2
-              mb-4
-            "
-          >
-            Este funciona mediante express y una base de datos relacional en
-            PostgreSQL, se creo una API Rest para conectar el Front-End con el
-            Back-End, para realizar la facturacion electronica el mismo tiene
-            almacenada la firma electronica del cliente y se conecta
-            directamente con el servidore de facturacion electronica del SRI y
-            actualmente se encuentra en fase de produccion, vale recalcar que el
-            sistema esta desarrollado con Javascript puro a diferencia del
-            Front-End que utiliza TypeScript.
-          </h3>
-          <img
-            class="w-11/12 mr-2 bg-white rounded-lg"
-            src="assets/img/PostgreSQL.png"
-          />
-          <div class="flex flex-col"></div>
-        </div>
-        <div class="flex flex-row justify-center">
-          <h1
-            id="fact"
-            class="
-              text-4xl
-              pt-10
-              text-fuchsia
-              font-medium
-              md:text-6xl
-              lg:text-8xl
-              animate-pulse
-            "
-          >
-            FACTURACION ELECTRONICA
-          </h1>
-        </div>
-        <div class="flex flex-col items-center md:flex-row mt-5 mx-5">
-          <h3
-            class="
-              text-gray-500
-              pt-2
-              text-base
-              md:text-base
-              lg:text-xl
-              text-justify
-              md:ml-2
-              mb-4
-              lg:mr-8
-            "
-          >
-            Este es el modulo más importante del sistema ya que automatiza por
-            completo el proceso de facturación, a continuacion se muestra la
-            pantalla principal desde donde el cajero puede facturar facilmente,
-            como se puede ver existe un buscador de cedula, y botones que sirven
-            para agregar un nuevo cliente, facturar como consumidor final o
-            eliminar el cliente para asignar uno nuevo a la factura, más abajo
-            se puede observar el buscador de productos con el cual se podrá ir
-            ingresando productos a la factura.
-          </h3>
-          <img
-            class="w-11/12 md:w-3/5 mr-2 bg-white rounded-lg"
-            src="assets/img/FactPage.png"
-          />
-          <div class="flex flex-col"></div>
-        </div>
-        <div class="flex flex-col items-center mt-5">
-          <div class="flex flex-row justify-center">
-            <h1
+        <div class="flex flex-col items-center mt-5 mb-10">
+          <div class="flex flex-row">
+            <h2 class="text-white mb-3">
+              LINEA DE CRECIMEINTO PROFESIONAL - SELECCIONA CADA SECCION EN LOS
+              PUNTOS
+            </h2>
+          </div>
+          <div class="w-full relative">
+            <p
+              id="activeLevel"
               class="
-                text-4xl
-                pt-6
-                text-fuchsia
-                font-medium
-                md:text-4xl
-                lg:text-6xl
-                mb-6
+                bg-gradient-to-r
+                from-purple-400
+                via-pink-500
+                to-red-500
+                w-10
+                h-10
+                rounded-full
+                absolute
+                top-0
+                left-0
+                z-20
+                transform
+                border-10
               "
-            >
-              Escogiendo la forma de pago
-            </h1>
-          </div>
-          <div
-            id="card-project"
-            class="
-              animate-enter-card
-              relative
-              w-screen45
-              h-screen/3
-              md:w-screen80 md:h-screen/2
-              rounded-xl
-              overflow-hidden
-              flex flex-col
-              items-center
-              justify-center
-              bg-forma-pago-1 bg-no-repeat bg-center bg-contain
-            "
-            *ngIf="imageBanner == true"
-          >
-            <button
-              class="slider-button-right symbol"
-              (click)="SiguienteImagen()"
-            >
-              >
-            </button>
-            <button
-              class="slider-button-left symbol"
-              (click)="AnteriorImagen()"
-            >
-              <
-            </button>
-          </div>
-          <div
-            id="card-project"
-            class="
-              animate-enter-card
-              relative
-              w-screen45
-              h-screen/3
-              md:w-screen80 md:h-screen/2
-              rounded-xl
-              overflow-hidden
-              flex flex-col
-              items-center
-              justify-center
-              bg-forma-pago-2 bg-no-repeat bg-center bg-contain
-            "
-            *ngIf="imageLogin == true"
-          >
-            <button
-              class="slider-button-right symbol"
-              (click)="SiguienteImagen()"
-            >
-              >
-            </button>
-            <button
-              class="slider-button-left symbol"
-              (click)="AnteriorImagen()"
-            >
-              <
-            </button>
+            ></p>
+            <p
+              id="level1"
+              class="
+                bg-white
+                w-10
+                h-10
+                rounded-full
+                absolute
+                top-0
+                left-0
+                cursor-pointer
+              "
+              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)"
+              (click)="LevelOne()"
+            ></p>
+            <p
+              id="level2"
+              class="
+                bg-white
+                w-10
+                h-10
+                rounded-full
+                absolute
+                top-0
+                left-2/5
+                md:left-1/2
+                cursor-pointer
+              "
+              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)"
+              (click)="LevelTwo()"
+            ></p>
+            <p
+              id="level3"
+              class="
+                bg-white
+                w-10
+                h-10
+                rounded-full
+                absolute
+                top-0
+                right-0
+                cursor-pointer
+              "
+              style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0)"
+              (click)="LevelThree()"
+            ></p>
+            <p class="link-bottom mt-4"></p>
           </div>
         </div>
-        <div class="text-gray-500 pt-2 text-2xl" *ngIf="imageBanner == true">
-          <h1>
-            Una vez la factura esta realizada se elige la forma de pago en una
-            ventana modal con un buscador de las formas de pago existentes.
-          </h1>
-        </div>
-        <div class="text-gray-500 pt-2 text-2xl" *ngIf="imageLogin == true">
-          <h1>Se puede pagar con varias formas de pago a la vez</h1>
+
+        <div class="relative">
+          <div id="secondary-education" class="flex flex-col items-center">
+            <section id="secondaryGalery">
+              <img
+                (click)="openLightBox('assets/img/fisico-matematico.png')"
+                src="assets/img/fisico-matematico.png"
+                alt=""
+              />
+              <img
+                (click)="openLightBox('assets/img/auxiliar-computacion.png')"
+                src="assets/img/auxiliar-computacion.png"
+                alt=""
+              />
+            </section>
+            <div class="flex flex-row justify-center">
+              <h2
+                class="
+                  text-gray-500
+                  pt-2
+                  text-base
+                  md:text-base
+                  lg:text-xl
+                  text-justify
+                  md:ml-2
+                  mb-4
+                  mt-4
+                "
+              >
+                La secundaria la curse en el Colegio Hermano Miguel de Latacunga
+                en la especialidad de Físico Matemático, ademas del titulo
+                normal de bachiller en dicha especialidad esta rama trae consigo
+                una certificacion extra la cual consiste en una auxiliaria en
+                equipos de computo gracias a materias como programación, diseño
+                grafico y mantenimiento de computadoras que se impartía en ese
+                momento en la institución.
+              </h2>
+            </div>
+          </div>
+          <div id="university" class="flex-col items-center hidden">
+            <section id="secondaryGalery">
+              <img
+                (click)="openLightBox('assets/img/creditos.png')"
+                src="assets/img/creditos.png"
+                alt=""
+              />
+              <img
+                (click)="openLightBox('assets/img/matricula.png')"
+                src="assets/img/matricula.png"
+                alt=""
+              />
+            </section>
+            <div class="flex flex-row justify-center">
+              <h2
+                class="
+                  text-gray-500
+                  pt-2
+                  text-base
+                  md:text-base
+                  lg:text-xl
+                  text-justify
+                  md:ml-2
+                  mb-4
+                  mt-4
+                "
+              >
+                Actualmente me encuentro en noveno semestre de la carrera de
+                Ing. en Sistemas Computacionales e Informáticos de la
+                Universidad Técnica de Ambato con unicamente 3 materias en mi
+                horario es decir unicamente tengo 2 horas de clases al dia de
+                Lunes a Viernes el semestre concluye el 20 de agosto del 2021 en
+                el cual pasaré a estar egresado de la carrera en espera de
+                concluir el trabajo de grado (tesis).
+              </h2>
+            </div>
+          </div>
+          <div id="extra" class="flex-col items-center hidden">
+            <section id="secondaryGalery">
+              <img
+                (click)="openLightBox('assets/img/EticalHacking.jpg')"
+                src="assets/img/EticalHacking.jpg"
+                alt=""
+              />
+              <img
+                (click)="openLightBox('assets/img/AngularLegacy.jpg')"
+                src="assets/img/AngularLegacy.jpg"
+                alt=""
+              />
+            </section>
+            <div class="flex flex-row justify-center">
+              <h2
+                class="
+                  text-gray-500
+                  pt-2
+                  text-base
+                  md:text-base
+                  lg:text-xl
+                  text-justify
+                  md:ml-2
+                  mb-4
+                  mt-4
+                "
+              >
+                Además de la educación formal soy un apasionado de aprender más
+                acerca del desarrollo de software y buenas practicas, estos son
+                dos ejemplos de cursos que he podido concluir pero tengo muchos
+                más de estos los cuales se pueden observar en la siguiente
+                sección.
+              </h2>
+            </div>
+          </div>
+          <section id="primary-container" class="">
+            <div id="secondary-container">
+              <img
+                id="active-image"
+                src="assets/img/fisico-matematico.png"
+                alt=""
+              />
+              <button
+                (click)="exit()"
+                id="btn-exit"
+                type="button"
+                class="symbol"
+              >
+                '
+              </button>
+            </div>
+          </section>
         </div>
       </div>
       <div class="flex flex-row justify-center">
         <h1
-          id="back"
+          id="certificaciones"
           class="
             text-5xl
             pt-10
@@ -734,10 +779,10 @@
             lg:text-6xl
           "
         >
-          PDF
+          CERTIFICACIONES
         </h1>
       </div>
-      <div class="flex flex-col items-center mt-5 mx-5">
+      <div class="flex flex-col items-center mt-5">
         <h3
           class="
             text-gray-500
@@ -748,19 +793,120 @@
             text-justify
             md:ml-2
             mb-4
-            mr-4
           "
         >
-          Esta es la factura en formato pdf que se envia directamente al
-          cliente, en este caso es una factura de pruebas pero el sistema ya se
-          encuentra en producción.
+          En esta sección puedes observar todos los cursos que he podido
+          concluir separados por tecnología.
         </h3>
-        <img class="w-2/3 mr-2 bg-white rounded-lg" src="assets/img/pdf.png" />
-        <div class="flex flex-col"></div>
+      </div>
+      <div class="flex flex-row mt-1 text-xs md:text-xl lg:text-2xl">
+        <nav class="flex-1">
+          <ul class="flex flex-row justify-end">
+            <li class="item-header">
+              <a (click)="FilterCertificates('Angular')">Angular</a>
+            </li>
+            <li class="item-header">
+              <a (click)="FilterCertificates('html')">Html</a>
+            </li>
+            <li class="item-header">
+              <a (click)="FilterCertificates('javascript')">Javascript</a>
+            </li>
+            <li class="item-header">
+              <a (click)="FilterCertificates('Tailwind')">Tailwind</a>
+            </li>
+            <li class="item-header">
+              <a (click)="FilterCertificates('Git')">Git</a>
+            </li>
+            <li class="item-header">
+              <a (click)="FilterCertificates('personal')"
+                >Desarrollo personal</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div>
+        <div class="flex flex-col items-center mt-10">
+          <div
+            *ngIf="!load"
+            id="card-project"
+            class="
+              animate-enter-card
+              relative
+              w-screen45
+              h-screen/3
+              md:w-screen80 md:h-screen/2
+              rounded-xl
+              overflow-hidden
+              flex flex-col
+              items-center
+              justify-center
+            "
+          >
+            <h1 class="text-white">Cargando...</h1>
+          </div>
+          <div *ngIf="load" class="text-white">
+            <h2 class="text-white md:mb-6">
+              Numero de certificados: {{ certificates.length }}
+            </h2>
+          </div>
+          <div
+            *ngIf="load"
+            id="card-project"
+            class="
+              animate-enter-card
+              relative
+              w-screen45
+              h-screen/2
+              md:w-screen80 md:h-screen60
+              rounded-xl
+              overflow-hidden
+              flex flex-col
+              items-center
+              justify-center
+            "
+          >
+            <div id="certificate" class="relative">
+              <img
+                src="{{ certificates[indexCertificate].source }}"
+                (click)="openCertificate(certificates[indexCertificate].source)"
+              />
+              <button
+                class="slider-button-right symbol absolute top-1/2"
+                (click)="SiguienteImagen()"
+              >
+                >
+              </button>
+              <button
+                class="slider-button-left symbol absolute top-1/2"
+                (click)="AnteriorImagen()"
+              >
+                <
+              </button>
+            </div>
+          </div>
+        </div>
+        <section id="primary-container-certificate">
+          <div id="secondary-container-certificate">
+            <img
+              id="active-certificate"
+              src="assets/img/AngularLegacy.jpg"
+              alt=""
+            />
+            <button
+              (click)="exitCertificate()"
+              id="btn-exit"
+              type="button"
+              class="symbol"
+            >
+              '
+            </button>
+          </div>
+        </section>
       </div>
       <div class="flex flex-row justify-center">
         <h1
-          id="demo"
+          id="experiencia"
           class="
             text-5xl
             pt-10
@@ -771,26 +917,47 @@
             animate-pulse
           "
         >
-          DEMO
+          EXPERIENCIA
         </h1>
       </div>
-      <div class="flex flex-col items-center mt-5 mx-5">
-        <h3
-          class="
-            text-gray-500
-            pt-2
-            text-base
-            md:text-base
-            lg:text-xl
-            text-justify
-            md:ml-2
-            mb-4
-            mr-4
-          "
-        >
-          Mil disculpas esta funcion se habilitara pronto.
-        </h3>
+      <div class="flex flex-col items-center mt-5 mx-10">
+        <div class="flex flex-col md:flex-row items-center justify-center">
+          <h1 class="text-gray-500 md:mr-4 mb-5 text-justify lg:text-2xl">
+            En 2018 estuve realizando practicas durante 3 meses en la empresa
+            SideSoft, esta empresa entre sus servicios se encontraba la
+            contabilidad y facturación mediante el ERP OpenBravo, mi trabajo
+            consistio en conectarme a la API de Openbravo mediante un POS
+            llamado Unicenta para que las ventas realizadas en este POS se
+            enviaran a la base de datos de Openbravo que funciona en postgress.
+          </h1>
+          <img
+            class="w-screen/2 md:ml-10 cursor-pointer"
+            src="https://res.cloudinary.com/latamarket/image/upload/v1626913162/WhatsApp_Image_2020-07-27_at_9.52.24_AM_4_mnni11.jpg"
+            (click)="
+              openCertificateXl(
+                'https://res.cloudinary.com/latamarket/image/upload/v1626913162/WhatsApp_Image_2020-07-27_at_9.52.24_AM_4_mnni11.jpg'
+              )
+            "
+          />
+        </div>
       </div>
+      <section id="primary-container-xl">
+        <div id="secondary-container-xl">
+          <img
+            id="active-certificate-xl"
+            src="assets/img/AngularLegacy.jpg"
+            alt=""
+          />
+          <button
+            (click)="exitCertificateXl()"
+            id="btn-exit"
+            type="button"
+            class="symbol"
+          >
+            '
+          </button>
+        </div>
+      </section>
     </div>
   </div>
 </div>

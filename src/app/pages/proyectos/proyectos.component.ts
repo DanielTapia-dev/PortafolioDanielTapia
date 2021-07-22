@@ -28,6 +28,8 @@ export class ProyectosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Funcion para abrir la imgen seleccionada
+
   openLightbox(image: string, i: number) {
     this.imagenActiva = document.querySelector('#active-image');
     this.primaryContainer = document.querySelector('#primary-container');
@@ -42,19 +44,6 @@ export class ProyectosComponent implements OnInit {
     this.projectIndex = i;
   }
 
-  openProject(image: string) {
-    this.imagenActiva = document.querySelector('#active-image');
-    this.primaryContainer = document.querySelector('#primary-container');
-    this.btnExit = document.querySelector('#btn-exit');
-    this.btnBehind = document.querySelector('#btn-behind');
-    this.btnNext = document.querySelector('#btn-next');
-    this.imagenes = document.querySelectorAll('#galeria img');
-    this.currentImage = document.getElementById(image) as HTMLImageElement;
-    this.imagenActiva.src = image;
-    this.primaryContainer.style.display = 'flex';
-    this.imageIndex = Array.from(this.imagenes).indexOf(this.currentImage);
-  }
-
   /*Cerrar el lightbox*/
 
   exitLightBox() {
@@ -62,6 +51,7 @@ export class ProyectosComponent implements OnInit {
   }
 
   /*Siguiente Imagen en el lightbox*/
+
   NextImage(index: number, nombre: any) {
     this.imagenes = document.querySelectorAll('#galeria img');
     if (this.imageIndex === (3 + ((this.projectIndex) * 4))) {
