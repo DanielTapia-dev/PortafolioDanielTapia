@@ -1,0 +1,114 @@
+<div
+  class="
+    bg-fondo-espacio
+    fondo
+    animate-bg-fondo-espacio
+    bg-contain
+    overflow-auto
+    h-screen
+  "
+>
+  <div><app-header></app-header></div>
+  <div class="flex flex-row justify-center mt-10">
+    <h1
+      id="experiencia"
+      class="
+        text-5xl
+        pt-10
+        text-fuchsia
+        font-medium
+        md:text-6xl
+        lg:text-8xl
+        animate-pulse
+      "
+    >
+      LOGROS
+    </h1>
+  </div>
+  <div class="mt-10 mx-10">
+    <div class="flex flex-col items-center mt-12">
+      <div class="flex flex-col md:flex-row items-center justify-center">
+        <h1 class="text-gray-500 md:mr-4 mb-5 text-justify lg:text-2xl">
+          El 15 de julio de 2021 tuve la oportunidad de asistir al evento de
+          BSides en el cual hubo un evento de capture the flag el cual se podia
+          participar en equipos de 4 personas no obstante yo participe en el
+          equipo de Hackem en el cual fuimos unicamente 2 personas y logramos
+          obtener el segundo lugar.
+        </h1>
+        <img
+          class="w-screen/2 md:ml-10 cursor-pointer"
+          src="https://res.cloudinary.com/latamarket/image/upload/v1626911915/diploma-ctf_fu9b86.png"
+          (click)="
+            openCertificateXl(
+              'https://res.cloudinary.com/latamarket/image/upload/v1626911915/diploma-ctf_fu9b86.png'
+            )
+          "
+        />
+      </div>
+    </div>
+    <section id="primary-container-xl">
+      <div id="secondary-container-xl">
+        <img
+          id="active-certificate-xl"
+          src="assets/img/AngularLegacy.jpg"
+          alt=""
+        />
+        <button
+          (click)="exitCertificateXl()"
+          id="btn-exit"
+          type="button"
+          class="symbol"
+        >
+          '
+        </button>
+      </div>
+    </section>
+    <div class="mt-12 w-full">
+      <div
+        class="
+          flex flex-col
+          md:flex-row
+          items-center
+          justify-center
+          text-justify
+        "
+      >
+        <h1 class="text-gray-500 md:mr-4 mb-5 text-justify lg:text-2xl">
+          Carta de felicitación de CISCO por haber completado el modulo 1 de la
+          certificacion CCNA de Cisco en el cual se imparten conocimientos para
+          diseñar esquemas de direccionamiento IP para proporcionar conectividad
+          de red a pequeñas y medianas empresas.
+        </h1>
+        <img
+          class="w-screen/2 md:ml-10 cursor-pointer"
+          src="https://res.cloudinary.com/latamarket/image/upload/v1626913182/4_uzuhio.jpg"
+          (click)="
+            openCertificateXl(
+              'https://res.cloudinary.com/latamarket/image/upload/v1626913182/4_uzuhio.jpg'
+            )
+          "
+        />
+      </div>
+    </div>
+    <section id="primary-container-xl">
+      <div id="secondary-container">
+        <img
+          id="active-certificate-xl"
+          src="assets/img/AngularLegacy.jpg"
+          alt=""
+        />
+        <button
+          (click)="exitCertificateXl()"
+          id="btn-exit"
+          type="button"
+          class="symbol"
+        >
+          '
+        </button>
+      </div>
+    </section>
+  </div>
+  <div class="relative h-screen md:h-screen">
+    <app-footer></app-footer>
+  </div>
+</div>

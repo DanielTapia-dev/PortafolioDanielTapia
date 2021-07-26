@@ -6,6 +6,8 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { SharedModule } from '../shared/shared.module';
 import { PagesComponent } from './pages.component';
 import { AboutComponent } from './about/about.component';
+import { ReferencesComponent } from './references/references.component';
+import { AchievementsComponent } from './achievements/achievements.component';
 
 
 
@@ -14,7 +16,9 @@ import { AboutComponent } from './about/about.component';
     ProyectosComponent,
     PrimaryProjectComponent,
     PagesComponent,
-    AboutComponent
+    AboutComponent,
+    ReferencesComponent,
+    AchievementsComponent
   ],
   imports: [
     CommonModule,

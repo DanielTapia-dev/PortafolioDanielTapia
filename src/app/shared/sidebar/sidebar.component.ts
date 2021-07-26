@@ -8,13 +8,13 @@ import { Component, HostListener, Input, OnInit, EventEmitter, Output } from '@a
 export class SidebarComponent implements OnInit {
 
   @Input()
-  start: any = '';
+  start: any = 'true';
   @Input()
-  about: any = '';
+  about: any = 'false';
   @Input()
-  projects: any = '';
+  projects: any = 'false';
   @Input()
-  contact: any = '';
+  contact: any = 'false';
   seccion: any;
   @Input()
   page: string = '';
@@ -26,6 +26,10 @@ export class SidebarComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.MoveScreen('start');
   }
 
   //Funcion que mueve la pantall
@@ -87,6 +91,4 @@ export class SidebarComponent implements OnInit {
       this.contact = 'true';
     }
   }
-
-
 }

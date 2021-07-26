@@ -1,0 +1,70 @@
+<div
+  class="
+    bg-fondo-espacio
+    fondo
+    animate-bg-fondo-espacio
+    bg-contain
+    overflow-auto
+    h-screen
+  "
+>
+  <div><app-header></app-header></div>
+  <div class="mt-10 mx-10">
+    <div class="flex flex-row justify-center">
+      <h1
+        id="perfil"
+        class="
+          text-5xl
+          pt-10
+          text-fuchsia
+          font-medium
+          md:text-6xl
+          lg:text-8xl
+          animate-pulse
+        "
+      >
+        REFERENCIAS
+      </h1>
+    </div>
+
+    <h3
+      class="text-gray-500 pt-5 text-xs md:text-base lg:text-2xl text-justify"
+    >
+      En esta sección puedes encontrar las personas con las que he podido
+      trabajar y sus respectivos contactos:
+    </h3>
+    <table
+      class="
+        table-auto
+        text-white text-xs
+        md:text-base
+        lg:text-xl
+        text-center
+        w-full
+        mt-10
+      "
+    >
+      <thead class="bg-fuchsia text-black">
+        <tr class="border-white border-2">
+          <th class="border-white border-2">#</th>
+          <th class="border-white border-2">Nombre</th>
+          <th class="border-white border-2">Proyecto/Trabajo</th>
+          <th class="border-white border-2">Teléfono</th>
+          <th class="border-white border-2">Correo</th>
+        </tr>
+      </thead>
+      <tbody class="border-white border-2">
+        <tr *ngFor="let referencia of referencias; let i = index">
+          <td class="border-white border-2">{{ i }}</td>
+          <td class="border-white border-2">{{ referencia.nombre }}</td>
+          <td class="border-white border-2">{{ referencia.proyecto }}</td>
+          <td class="border-white border-2">{{ referencia.celular }}</td>
+          <td class="border-white border-2">{{ referencia.correo }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="relative h-screen md:h-screen">
+    <app-footer></app-footer>
+  </div>
+</div>

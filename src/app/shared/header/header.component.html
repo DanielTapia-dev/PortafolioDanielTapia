@@ -8,9 +8,10 @@
           width="200px"
         />
         <img
-          class="pb-5 pt-2 opacity-0 hover:opacity-100 absolute"
+          class="pb-5 pt-2 opacity-0 hover:opacity-100 absolute cursor-pointer"
           src="assets/img/LogoPricipalColorfull.png"
           width="200px"
+          routerLink="/pages"
         />
       </div>
     </div>
@@ -40,7 +41,7 @@
               <a routerLink="/about">ESTUDIOS</a>
             </li>
             <li class="item-header hover:text-fuchsia">
-              <a href="#">LOGROS</a>
+              <a href="/achievements">LOGROS</a>
             </li>
           </ul>
         </nav>
@@ -54,11 +55,48 @@
           visible
           lg:invisible
           xl:invisible
-          animate-pulse
         "
+        (click)="openMenu()"
       >
         &equiv;
       </div>
+    </div>
+  </div>
+  <div
+    id="menu"
+    class="
+      w-screen
+      h-screen
+      bg-gradient-to-r
+      from-purple-400
+      via-pink-500
+      to-red-500
+      text-white
+      hidden
+      animate-left-to-right
+    "
+    style="z-index: 0"
+  >
+    <div
+      class="flex flex-row justify-center items-center w-full h-full"
+      style="animation-delay: 500ms"
+    >
+      <nav class="">
+        <ul class="flex flex-col justify-center text-center text-8xl">
+          <li class="item-header mb-4 hover:text-fuchsia">
+            <a routerLink="/">INICIO</a>
+          </li>
+          <li class="item-header mb-4 hover:text-fuchsia">
+            <a routerLink="/projects">PROYECTOS</a>
+          </li>
+          <li class="item-header mb-4 hover:text-fuchsia">
+            <a routerLink="/about">ESTUDIOS</a>
+          </li>
+          <li class="item-header hover:text-fuchsia">
+            <a href="/achievements">LOGROS</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   </div>
 </div>
