@@ -12,6 +12,7 @@ export class ReferencesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Lista de referencias pronto sera cargada con un servicio
   referencias: any[] = [
     {
       nombre: 'Diego Yanez',

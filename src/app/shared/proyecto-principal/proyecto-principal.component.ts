@@ -16,6 +16,7 @@ export class ProyectoPrincipalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Funcion para cambiar de imagen del proyecto principal
   SiguienteImagen() {
     if (this.imageBanner === true) {
       this.imageBanner = false;

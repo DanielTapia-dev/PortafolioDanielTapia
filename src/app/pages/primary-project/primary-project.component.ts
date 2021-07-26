@@ -10,6 +10,7 @@ export class PrimaryProjectComponent implements OnInit {
   imageBanner: boolean = true;
   imageLogin: boolean = false;
 
+  //Funciones para moverse entre imagenes en la seccion de forma de pago
   SiguienteImagen() {
     if (this.imageBanner === true) {
       this.imageBanner = false;
@@ -34,6 +35,7 @@ export class PrimaryProjectComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Funcion para moverse entre DIVs que tienen las secciones de la pagina
   GoToDiv(page: string) {
     switch (page) {
       case 'front':

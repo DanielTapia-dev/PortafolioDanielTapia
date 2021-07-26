@@ -192,7 +192,7 @@ export class AboutComponent implements OnInit {
     }, 500);
   }
 
-  //se desactivan las funciones anteriores para que no causen problemas y luego se ingresan las funciones de entrada y posicionamiento
+  //Se desactivan las funciones anteriores para que no causen problemas y luego se ingresan las funciones de entrada y posicionamiento
   LevelTwo() {
     document.getElementById('university')?.classList.add('animate-enter-card');
     document.getElementById('university')?.classList.add('flex');

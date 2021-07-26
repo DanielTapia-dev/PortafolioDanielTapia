@@ -23,7 +23,7 @@ export class AchievementsComponent implements OnInit {
     this.activeCertificateXl.src = img;
   }
 
-  //Salida del certificado
+  //Salida de la imagen certificado
   exitCertificateXl() {
     this.certificateLightboxXl.style.display = 'none';
   }
